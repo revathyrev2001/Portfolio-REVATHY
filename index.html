@@ -1,0 +1,1935 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revathy Radhakrishnan · GTM Engineer</title>
+<meta name="description" content="Revathy Radhakrishnan builds the machines behind outbound: buying-signal tools, n8n automation, CRM data operations and lead research. GTM Engineer in Bengaluru.">
+<meta property="og:title" content="Revathy Radhakrishnan · GTM Engineer">
+<meta property="og:description" content="I automate the boring parts of sales so humans can do the fun parts.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FF5A36'/%3E%3Ctext x='50' y='66' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3ERR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Special+Elite&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFF3D1;
+  --surface: #FFFFFF;
+  --surface-2: #FFE9BE;
+  --ink: #1D1B26;
+  --muted: #5E5A6B;
+  --line: #EEDCB2;
+  --tomato: #FF5A36;
+  --tomato-ink: #C93A1A;
+  --teal: #0F9F8F;
+  --sun: #FFC93C;
+  --lilac: #7C6CF0;
+  --term-bg: #1D1B26;
+  --term-ink: #F4EEE3;
+  --shadow: 0 1px 0 rgba(29,27,38,.06), 0 10px 30px -12px rgba(29,27,38,.25);
+  --radius: 18px;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #221C38;
+    --surface: #2B2444;
+    --surface-2: #372E55;
+    --ink: #F4EEE3;
+    --muted: #B9B0CE;
+    --line: #443A66;
+    --tomato: #FF6E4D;
+    --tomato-ink: #FF8F75;
+    --teal: #2CC7B5;
+    --sun: #FFD25C;
+    --lilac: #9B8EFF;
+    --term-bg: #0D0C12;
+    --shadow: 0 1px 0 rgba(0,0,0,.4), 0 10px 30px -12px rgba(0,0,0,.7);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 17px/1.6 var(--body); -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; margin: 0; letter-spacing: -0.02em; }
+h2 { font-size: clamp(30px, 4.4vw, 48px); font-weight: 800; }
+.kicker { font: 600 13px/1 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--tomato-ink); margin-bottom: 14px; display: block; }
+.lede { color: var(--muted); max-width: 640px; margin: 14px 0 0; font-size: 18px; }
+section { padding: 96px 0; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px;
+  font: 600 16px/1 var(--body); text-decoration: none; border: 2px solid var(--ink); cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease; background: var(--surface); color: var(--ink);
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ink); }
+.btn.primary { background: var(--tomato); border-color: var(--tomato); color: #fff; }
+.btn.primary:hover { box-shadow: 4px 4px 0 var(--ink); }
+:focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; border-radius: 6px; }
+
+/* nav */
+nav.top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+nav.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font: 800 18px var(--display); text-decoration: none; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0; }
+.logo .dot { width: 34px; height: 34px; border-radius: 10px; background: var(--tomato); color: #fff; display: grid; place-items: center; font-size: 14px; transition: transform .3s; }
+.logo:hover .dot { transform: rotate(-12deg) scale(1.05); }
+.links { display: flex; gap: 22px; font-size: 15px; font-weight: 500; }
+.links a { text-decoration: none; color: var(--muted); }
+.links a:hover { color: var(--ink); }
+
+/* hero */
+.hero { padding: 72px 0 88px; }
+.hero .grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font: 500 14px var(--mono); color: var(--muted); }
+.badge .live { width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0 var(--teal); animation: ping 2s infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--teal) 60%, transparent); } 100% { box-shadow: 0 0 0 10px transparent; } }
+.hero h1 { font-size: clamp(44px, 7.2vw, 88px); font-weight: 800; margin: 22px 0 0; }
+.hero h1 .swap { color: var(--tomato); display: inline-block; }
+.hero p.sub { font-size: clamp(18px, 2.1vw, 22px); color: var(--muted); max-width: 560px; margin: 22px 0 32px; }
+.hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.scribble { font: 500 14px var(--mono); color: var(--muted); margin-top: 22px; }
+
+/* mascot stage + mascot */
+.mstage { position: relative; height: 560px; }
+.mstage::before { content: ""; position: absolute; left: 4%; right: 4%; top: 2%; bottom: 10%; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--sun) 55%, #FFFDF5), color-mix(in srgb, var(--sun) 52%, transparent) 55%, transparent); }
+.mstage::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: 9%; height: 22px; border-radius: 50%; background: color-mix(in srgb, var(--ink) 8%, transparent); }
+.mstage .hint { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; text-align: center; font: 13px var(--mono); color: var(--muted); }
+.mstage .fallback { display: none; position: absolute; inset: 8% 18% 16%; border-radius: 28px; overflow: hidden; background: linear-gradient(135deg, var(--tomato), var(--sun)); place-items: center; }
+.mstage .fallback img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.mstage .fallback span { font: 800 72px var(--display); color: #fff; }
+body.no-webgl .mstage .fallback { display: grid; }
+body.no-webgl .mstage .hint { display: none; }
+#mascot { position: fixed; z-index: 30; left: -9999px; top: 0; width: 10px; height: 10px; touch-action: none; }
+#mascot.glide { transition: left .6s cubic-bezier(.3,1.25,.4,1), top .6s cubic-bezier(.3,1.25,.4,1), width .6s ease, height .6s ease; }
+#mascot::before { content: ""; position: absolute; inset: -4% -10%; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--sun) 46%, transparent), transparent 72%); }
+#mascot canvas { position: relative; width: 100% !important; height: 100% !important; display: block; image-rendering: pixelated; }
+.bubble { position: fixed; z-index: 31; left: -9999px; top: 0; transform: translateY(-100%) scale(.85); transform-origin: 50% 100%; opacity: 0;
+  max-width: 250px; background: var(--ink); color: var(--bg); padding: 10px 14px; border-radius: 14px; font: 500 14px/1.35 var(--body);
+  pointer-events: none; transition: opacity .2s ease, transform .25s cubic-bezier(.3,1.4,.5,1); box-shadow: var(--shadow); }
+.bubble.show { opacity: 1; transform: translateY(-100%) scale(1); }
+.heart { position: fixed; z-index: 55; pointer-events: none; font-size: 24px; transform: translate(-50%, -50%); animation: floatUp 1.1s ease-out forwards; }
+@keyframes floatUp { to { transform: translate(-50%, -170%) scale(1.4); opacity: 0; } }
+@media print { #mascot, .bubble { display: none; } }
+
+.terminal { max-width: 680px; margin-top: 14px; }
+.terminal { background: var(--term-bg); color: var(--term-ink); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; font: 14px/1.7 var(--mono); transform: rotate(1.2deg); }
+.terminal .bar { display: flex; gap: 7px; padding: 12px 14px; background: rgba(255,255,255,.06); }
+.terminal .bar i { width: 11px; height: 11px; border-radius: 50%; background: #FF5F57; }
+.terminal .bar i:nth-child(2) { background: #FEBC2E; } .terminal .bar i:nth-child(3) { background: #28C840; }
+.terminal pre { margin: 0; padding: 18px 20px 22px; min-height: 290px; white-space: pre-wrap; word-break: break-word; }
+.terminal .p { color: var(--sun); } .terminal .ok { color: #5EE6B5; } .terminal .dim { color: #9C95AA; }
+.cursor { display: inline-block; width: 8px; height: 16px; background: var(--term-ink); vertical-align: -3px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* receipts */
+.receipts { background: var(--ink); color: var(--bg); }
+.receipts .kicker { color: var(--sun); }
+.receipts .lede { color: color-mix(in srgb, var(--bg) 70%, transparent); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px; }
+.stat { border: 1px solid color-mix(in srgb, var(--bg) 18%, transparent); border-radius: var(--radius); padding: 22px; }
+.stat b { display: block; font: 800 clamp(34px, 4vw, 48px)/1 var(--display); color: var(--sun); font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 10px; font-size: 15px; }
+.stat small { display: block; margin-top: 6px; font-size: 13px; color: color-mix(in srgb, var(--bg) 60%, transparent); }
+
+/* machine */
+.machine { margin-top: 44px; background: var(--surface); border: 2px solid var(--ink); border-radius: 24px; padding: 28px; box-shadow: 8px 8px 0 var(--ink); }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; counter-reset: s; }
+.stage { position: relative; border-radius: 14px; padding: 16px 12px; background: var(--surface-2); text-align: center; border: 2px solid transparent; transition: all .35s ease; }
+.stage .ico { font-size: 28px; display: block; }
+.stage b { display: block; font: 700 16px var(--display); margin-top: 6px; }
+.stage small { display: block; font: 12px var(--mono); color: var(--muted); margin-top: 4px; }
+.stage.active { border-color: var(--tomato); background: color-mix(in srgb, var(--tomato) 14%, var(--surface)); transform: translateY(-6px); }
+.stage.done { border-color: var(--teal); }
+.stage.done::after { content: "✓"; position: absolute; top: 8px; right: 10px; color: var(--teal); font-weight: 700; }
+.machine .controls { display: flex; gap: 16px; align-items: center; justify-content: space-between; margin-top: 24px; flex-wrap: wrap; }
+.caption { flex: 1 1 360px; min-height: 56px; display: flex; align-items: center; gap: 14px; font-size: 16px; }
+.caption .token { font-size: 34px; transition: transform .3s; }
+.fineprint { font: 13px var(--mono); color: var(--muted); margin-top: 16px; }
+
+/* cards */
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
+.card { perspective: 1200px; height: 360px; border: 0; padding: 0; background: none; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.card .inner { position: relative; width: 100%; height: 100%; transition: transform .6s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; }
+.card[aria-pressed="true"] .inner { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 20px; padding: 18px; border: 2px solid var(--ink); display: flex; flex-direction: column; background: var(--surface); box-shadow: 5px 5px 0 var(--ink); }
+.face.back { transform: rotateY(180deg); background: var(--surface-2); }
+.front .art { height: 120px; border-radius: 12px; display: grid; place-items: center; font-size: 54px; margin: 10px 0 12px; }
+.rarity { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; display: flex; justify-content: space-between; color: var(--muted); }
+.rarity .r { padding: 3px 8px; border-radius: 999px; color: #fff; }
+.card h3 { font-size: 22px; font-weight: 800; }
+.cls { font: 12px var(--mono); color: var(--muted); margin-top: 2px; }
+.power { font-size: 14px; margin-top: 10px; }
+.power em { font-style: normal; font-weight: 600; }
+.weak { font-size: 13px; color: var(--muted); margin-top: auto; padding-top: 8px; border-top: 1px dashed var(--line); }
+.back p { font-size: 14px; margin: 8px 0 0; }
+.back .stack { margin-top: auto; font: 12px var(--mono); color: var(--muted); }
+.flip-hint { font: 12px var(--mono); color: var(--muted); text-align: right; margin-top: 8px; }
+.c1 .art { background: #FFE1D8; } .c2 .art { background: #DDF6F2; } .c3 .art { background: #FFF0C4; } .c4 .art { background: #E8E4FF; }
+.c5 .art { background: #DDF6F2; } .c6 .art { background: #FFE1D8; } .c7 .art { background: #E8E4FF; } .c8 .art { background: #FFF0C4; }
+@media (prefers-color-scheme: dark) { .front .art { background: var(--surface-2) !important; } }
+.leg { background: linear-gradient(90deg, #FF5A36, #FFC93C); } .epi { background: var(--lilac); } .rar { background: var(--teal); } .unc { background: #8A8494; }
+
+/* cheap */
+.cheap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.receipt { background: var(--surface); border-radius: 6px; padding: 26px 26px 34px; font: 14px/1.8 var(--mono); box-shadow: var(--shadow); position: relative; transform: rotate(-1.5deg);
+  -webkit-mask: radial-gradient(circle 8px at 50% 100%, transparent 98%, #000) 0 0/22px 100% repeat-x; mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/18px 100%; }
+.receipt h3 { font: 700 15px var(--mono); text-align: center; letter-spacing: .1em; }
+.receipt .row { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding: 6px 0; }
+.receipt .row s { color: var(--muted); }
+.receipt .total { font-weight: 700; color: var(--teal); }
+.receipt .thanks { text-align: center; margin-top: 14px; color: var(--muted); }
+
+/* patch notes */
+.notes { margin-top: 40px; display: grid; gap: 18px; }
+.note { display: grid; grid-template-columns: 170px 1fr; gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.ver { font: 800 28px var(--display); color: var(--tomato); }
+.ver small { display: block; font: 12px var(--mono); color: var(--muted); margin-top: 6px; letter-spacing: 0; }
+.note h3 { font-size: 21px; }
+.note .co { font: 13px var(--mono); color: var(--muted); margin-top: 4px; }
+.note ul { list-style: none; padding: 0; margin: 12px 0 0; font-size: 15px; }
+.note li { padding: 3px 0 3px 26px; position: relative; }
+.note li::before { position: absolute; left: 0; font: 700 13px var(--mono); top: 5px; }
+.note li.add::before { content: "+"; color: var(--teal); font-size: 16px; top: 2px; }
+.note li.fix::before { content: "fix"; color: var(--lilac); font-size: 10px; top: 7px; }
+.note li.bug::before { content: "!"; color: var(--tomato); font-size: 15px; top: 3px; left: 4px; }
+.note li.bug { color: var(--muted); font-style: italic; }
+
+/* side quests + toolbox */
+.quests { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+.quest { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.quest .q { font-size: 28px; }
+.quest h3 { font-size: 19px; margin-top: 10px; }
+.quest p { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.chip { padding: 8px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font: 500 14px var(--body); transition: transform .15s; }
+.chip:hover { transform: rotate(-3deg) scale(1.06); border-color: var(--tomato); }
+
+/* contact */
+.contact { text-align: center; }
+.contact h2 { font-size: clamp(38px, 6vw, 72px); }
+.contact .lede { margin: 18px auto 32px; }
+.contact .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font: 13px var(--mono); color: var(--muted); text-align: center; }
+footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+
+/* toast + confetti */
+.toast { visibility: hidden; }
+.toast.show { visibility: visible; }
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 220%); background: var(--ink); color: var(--bg); padding: 14px 20px; border-radius: 14px; font-size: 15px; z-index: 50; transition: transform .4s cubic-bezier(.2,.9,.3,1.3); max-width: calc(100% - 32px); box-shadow: var(--shadow); }
+.toast.show { transform: translate(-50%, 0); }
+.confetti { position: fixed; top: -12px; width: 10px; height: 14px; z-index: 60; pointer-events: none; border-radius: 2px; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+
+/* dossier (investigation board) */
+.dossier {
+  --paper: #F4EAD5; --paper-2: #EFE2C6; --paper-ink: #2B2118; --paper-muted: #6B5A48;
+  --red: #B3261E; --sticky: #FCE38A; --chalk: #23262B;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.05), transparent 40%),
+    repeating-linear-gradient(45deg, rgba(0,0,0,.05) 0 2px, transparent 2px 6px),
+    #4A3527;
+  color: var(--paper-ink); padding: 88px 0 96px;
+}
+.dossier .head { color: #F4EAD5; margin-bottom: 36px; }
+.dossier .head .kicker { color: var(--sticky); }
+.dossier .head .lede { color: #D9C9AE; }
+.board { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; align-items: start; }
+.paper {
+  position: relative; background: var(--paper); border-radius: 4px; padding: 22px 22px 20px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.15), 0 14px 26px -12px rgba(0,0,0,.6);
+  transform: rotate(var(--tilt, 0deg)); transition: transform .25s ease, box-shadow .25s ease;
+}
+.paper:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 2px 0 rgba(0,0,0,.15), 0 22px 34px -14px rgba(0,0,0,.7); z-index: 2; }
+.paper::before { /* push pin */
+  content: ""; position: absolute; top: -8px; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FF7A70, var(--red) 60%, #6E120D); box-shadow: 0 3px 4px rgba(0,0,0,.45);
+}
+.paper.nopin::before { display: none; }
+.tw { font-family: "Special Elite", var(--mono); }
+.paper h3.tw { font-size: 19px; color: var(--red); letter-spacing: .02em; border-bottom: 2px solid var(--red); display: inline-block; padding-bottom: 2px; margin-bottom: 12px; }
+.paper ul { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.55; }
+.paper li { margin: 3px 0; }
+.paper p { margin: 0; font-size: 15px; }
+.sticky {
+  background: var(--sticky); font: 600 22px/1.25 "Caveat", cursive; color: #3A2E1A; padding: 18px 18px 16px;
+  box-shadow: 0 12px 22px -12px rgba(0,0,0,.65); transform: rotate(var(--tilt, 2deg)); position: relative;
+}
+.sticky::after { /* tape */
+  content: ""; position: absolute; top: -10px; left: 50%; width: 70px; height: 20px; margin-left: -35px;
+  background: rgba(255,255,255,.45); transform: rotate(-3deg);
+}
+.hand { font-family: "Caveat", cursive; }
+.file-card .filetag { position: absolute; top: 14px; right: 16px; font: 15px "Special Elite", monospace; color: var(--red); border: 2px solid var(--red); padding: 2px 8px; transform: rotate(3deg); }
+.file-card .label { font: 13px "Special Elite", monospace; letter-spacing: .14em; color: var(--paper-muted); }
+.file-card h2 { font-family: "Special Elite", var(--mono); font-size: clamp(34px, 4.6vw, 54px); line-height: 1; margin: 14px 0 8px; color: var(--paper-ink); letter-spacing: 0; }
+.file-card h2 span { color: var(--red); }
+.file-card .subject { font: 15px "Special Elite", monospace; margin-top: 10px; }
+.file-card .subject b { font: 700 30px "Caveat", cursive; color: var(--paper-ink); margin-left: 6px; }
+.file-card .tags { font: 13px var(--mono); color: var(--paper-muted); margin-top: 10px; }
+.polaroid { background: #fff; padding: 12px 12px 44px; box-shadow: 0 16px 28px -12px rgba(0,0,0,.7); transform: rotate(var(--tilt, -3deg)); position: relative; }
+.polaroid .ph { aspect-ratio: 4/5; background: linear-gradient(135deg, #FF5A36, #FFC93C); display: grid; place-items: center; overflow: hidden; }
+.polaroid .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.polaroid .ph .initials { font: 800 64px var(--display); color: #fff; }
+.polaroid .cap { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font: 700 24px "Caveat", cursive; color: #333; }
+.identity li { list-style: none; margin-left: -18px; display: flex; gap: 10px; }
+.identity li span:first-child { width: 22px; flex: none; text-align: center; }
+.strengths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 10px; text-align: center; }
+.strengths div { font-size: 14px; font-weight: 600; line-height: 1.25; }
+.strengths i { display: block; font-style: normal; font-size: 24px; margin-bottom: 4px; }
+.strengths small { display: block; font-weight: 400; font-size: 12px; color: var(--paper-muted); margin-top: 2px; }
+.demo-links { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.demo-links a { font: 13px var(--mono); color: var(--red); text-decoration: none; border-bottom: 1px dashed var(--red); align-self: flex-start; }
+.pipeline { font: 600 19px/1.3 "Caveat", cursive; margin-top: 12px; color: #3A2E1A; background: var(--sticky); padding: 10px 12px; transform: rotate(-1.5deg); }
+.funnel { display: flex; gap: 8px; align-items: flex-end; margin-top: 12px; }
+.funnel div { flex: 1; text-align: center; font: 12px var(--mono); color: var(--paper-muted); }
+.funnel b { display: block; font: 800 26px var(--display); color: var(--paper-ink); }
+.funnel .arrow { flex: 0 0 auto; font-size: 18px; color: var(--red); padding-bottom: 14px; }
+.checklist li { list-style: none; margin-left: -18px; padding-left: 26px; position: relative; }
+.checklist li::before { content: "☐"; position: absolute; left: 0; top: -1px; font-size: 17px; color: var(--paper-muted); }
+.chalk { background: var(--chalk); color: #EDEAE3; }
+.chalk h3.tw { color: #EDEAE3; border-color: #EDEAE3; }
+.chalk li { list-style: none; margin-left: -18px; padding-left: 26px; position: relative; font-family: "Caveat", cursive; font-size: 21px; line-height: 1.3; }
+.chalk li::before { content: "☑"; position: absolute; left: 0; top: 0; font-size: 17px; color: #9BE3C5; }
+.crime h3 { font: 22px/1.15 "Special Elite", monospace; color: var(--red); }
+.crime p.hand { font-size: 30px; line-height: 1.15; margin-top: 12px; }
+.stamp { display: inline-block; margin-top: 14px; border: 3px solid var(--red); color: var(--red); font: 22px/1.1 "Special Elite", monospace; padding: 6px 14px; transform: rotate(-6deg); text-align: center; opacity: .9; cursor: pointer; background: none; }
+.stamp small { display: block; font-size: 14px; }
+.verdict .stamp { font-size: 17px; }
+.dossier .board > * { min-width: 0; }
+.span-5 { grid-column: span 5; } .span-4 { grid-column: span 4; } .span-3 { grid-column: span 3; }
+.span-7 { grid-column: span 7; } .span-6 { grid-column: span 6; } .span-8 { grid-column: span 8; } .span-2 { grid-column: span 2; }
+
+/* blueprint: click-and-expand GTM stack */
+.bp { margin-top: 40px; }
+.bp-rail { display: flex; gap: 10px; flex-wrap: wrap; }
+.bp-stage { flex: 1 1 150px; min-width: 146px; text-align: left; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 14px; cursor: pointer; font: inherit; color: inherit; position: relative; transition: all .15s; }
+.bp-stage .bp-ico { font-size: 24px; display: block; }
+.bp-stage b { font: 700 17px var(--display); display: block; margin-top: 6px; }
+.bp-stage small { color: var(--muted); font-size: 12.5px; }
+.bp-stage:hover { border-color: var(--ink); transform: translateY(-2px); }
+.bp-stage[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: var(--bg); box-shadow: 4px 4px 0 var(--tomato); }
+.bp-stage[aria-selected="true"] small { color: color-mix(in srgb, var(--bg) 72%, transparent); }
+.bp-num { position: absolute; top: 8px; right: 12px; font: 700 12px var(--mono); color: var(--muted); }
+.bp-detail { margin-top: 18px; background: var(--surface); border: 2px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink); padding: 22px; }
+.bp-detail h3 { font-size: 24px; }
+.bp-detail > p { color: var(--muted); margin: 10px 0 0; max-width: 72ch; }
+.bp-meta { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; margin-top: 16px; }
+.bp-meta h4 { margin: 0 0 8px; font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+.bp-out { background: var(--surface-2); border-radius: 10px; padding: 10px 14px; font-size: 14.5px; margin: 0; }
+
+/* quiz */
+.quiz-box { max-width: 720px; margin-top: 36px; background: var(--surface); border: 2px solid var(--ink); border-radius: 20px; box-shadow: 8px 8px 0 var(--ink); padding: 26px; }
+.quiz-prog { display: flex; gap: 6px; margin-bottom: 14px; }
+.quiz-prog i { height: 6px; flex: 1; border-radius: 99px; background: var(--line); }
+.quiz-prog i.on { background: var(--tomato); }
+.quiz-q { font: 700 22px var(--display); }
+.quiz-opts { display: grid; gap: 10px; margin-top: 16px; }
+.quiz-opts button { text-align: left; padding: 12px 16px; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); font: 500 15.5px var(--body); color: inherit; cursor: pointer; transition: all .12s; }
+.quiz-opts button:hover { border-color: var(--tomato); transform: translateX(4px); }
+.quiz-res .big { font-size: 54px; line-height: 1; }
+.quiz-res h3 { font-size: 28px; margin-top: 8px; }
+.quiz-res .cls { font: 13px var(--mono); color: var(--muted); margin-top: 2px; }
+.quiz-res p { margin: 12px 0 0; }
+.quiz-res .weak2 { color: var(--muted); font-size: 14px; border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 10px; }
+.quiz-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+
+/* hidden dress-up wardrobe */
+#dressup { position: fixed; left: 16px; bottom: 16px; z-index: 65; background: var(--surface); border: 2px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink); padding: 14px 16px; display: none; max-width: 300px; }
+#dressup.open { display: block; }
+#dressup b { font-family: var(--display); }
+#dressup .dp-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+#dressup .dp-row button, #dressup .dp-auto { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); font: 500 13px var(--body); cursor: pointer; color: inherit; }
+#dressup .dp-auto { background: var(--ink); color: var(--bg); }
+#dressup .dp-close { position: absolute; top: 8px; right: 10px; background: none; border: 0; cursor: pointer; font-size: 14px; color: var(--muted); }
+@media (max-width: 960px) { .bp-meta { grid-template-columns: 1fr; } }
+
+/* colour blobs behind everything */
+.bgfx { position: fixed; inset: 0; z-index: -1; pointer-events: none; background:
+  radial-gradient(640px 460px at 86% 6%, color-mix(in srgb, var(--sun) 42%, transparent), transparent 70%),
+  radial-gradient(720px 540px at 4% 32%, color-mix(in srgb, var(--tomato) 13%, transparent), transparent 70%),
+  radial-gradient(640px 500px at 10% 94%, color-mix(in srgb, var(--teal) 17%, transparent), transparent 70%),
+  radial-gradient(560px 440px at 94% 78%, color-mix(in srgb, var(--lilac) 16%, transparent), transparent 70%); }
+
+/* matte grain finish (adapted from a three-layer feTurbulence overlay) */
+.grain { position: fixed; inset: 0; pointer-events: none; z-index: 15; overflow: hidden; }
+/* tool screenshots sit above the grain so they stay sharp; the nav (z 20) and mascot (z 30) still sit above them */
+.showcase .window { position: relative; z-index: 16; }
+.grain i { position: absolute; inset: 0; display: block; background-repeat: repeat; transform: translateZ(0); }
+.grain .g1 { opacity: .12; mix-blend-mode: screen; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.62' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.6 -0.55'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+.grain .g2 { opacity: .10; mix-blend-mode: multiply; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.5 -0.5'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+.grain .g3 { inset: -60%; opacity: .07; mix-blend-mode: screen; animation: grainShift .8s steps(8) infinite; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='1' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 2 -0.8'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+@keyframes grainShift {
+  0% { transform: translate(0, 0); } 12.5% { transform: translate(-3%, 2%); } 25% { transform: translate(2%, -4%); }
+  37.5% { transform: translate(-4%, -2%); } 50% { transform: translate(3%, 3%); } 62.5% { transform: translate(-2%, 4%); }
+  75% { transform: translate(4%, -3%); } 87.5% { transform: translate(-3%, -4%); } 100% { transform: translate(0, 0); }
+}
+@media (prefers-color-scheme: dark) {
+  .grain .g1 { opacity: .09; }
+  .grain .g2 { opacity: .16; }
+  .grain .g3 { opacity: .05; }
+}
+
+/* about */
+.about .grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; margin-top: 8px; }
+.about .portrait { position: relative; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: linear-gradient(135deg, var(--tomato), var(--sun)); display: grid; place-items: center; box-shadow: 8px 8px 0 var(--ink); border: 2px solid var(--ink); }
+.about .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.about .portrait span { font: 800 72px var(--display); color: #fff; }
+.about .bio p { font-size: 18px; margin: 0 0 16px; max-width: 680px; }
+.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 26px 0 30px; max-width: 680px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.fact small { display: block; font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.fact b { display: block; font-weight: 600; margin-top: 4px; font-size: 15px; }
+.about .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn .sub-note { font: 500 12px var(--mono); opacity: .8; }
+
+/* live tools showcase */
+.showcase .layout { display: grid; grid-template-columns: 250px 1fr; gap: 28px; margin-top: 40px; align-items: start; }
+.toollist { display: flex; flex-direction: column; gap: 8px; position: sticky; top: 84px; }
+.toollist button { display: flex; align-items: center; gap: 10px; text-align: left; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 15px var(--body); cursor: pointer; transition: all .15s; }
+.toollist button:hover { border-color: var(--ink); }
+.toollist button[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.toollist .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--teal) 25%, transparent); }
+.toollist .lock { background: var(--sun); box-shadow: 0 0 0 3px color-mix(in srgb, var(--sun) 30%, transparent); }
+.window { border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; background: var(--surface); box-shadow: 8px 8px 0 var(--ink); }
+.window .chrome { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--surface-2); border-bottom: 2px solid var(--ink); }
+.window .chrome i { width: 11px; height: 11px; border-radius: 50%; background: #FF5F57; } .window .chrome i:nth-child(2) { background: #FEBC2E; } .window .chrome i:nth-child(3) { background: #28C840; }
+.window .addr { flex: 1; margin-left: 8px; font: 12px var(--mono); color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.window .shot { display: block; width: 100%; aspect-ratio: 1440 / 900; object-fit: cover; object-position: top; cursor: zoom-in; background: #0f1115; border: 0; padding: 0; }
+.window .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.steps-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-top: 2px solid var(--ink); background: var(--surface-2); flex-wrap: wrap; }
+.steps-bar .count { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .06em; }
+.steps-bar .dots { display: flex; gap: 6px; }
+.steps-bar .dots button { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); font: 700 12px var(--mono); cursor: pointer; }
+.steps-bar .dots button[aria-current="step"] { background: var(--tomato); border-color: var(--tomato); color: #fff; }
+.steps-bar .nav { display: flex; gap: 8px; margin-left: auto; }
+.steps-bar .nav button { padding: 7px 12px; border-radius: 999px; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); font: 600 13px var(--body); cursor: pointer; }
+.steps-bar .nav button:disabled { opacity: .35; cursor: default; }
+.steps-bar .nav button.playing { background: var(--ink); color: var(--bg); }
+.stepcap { padding: 14px 16px 16px; border-top: 1px solid var(--line); min-height: 92px; }
+.stepcap b { display: block; font: 700 18px var(--display); }
+.stepcap p { margin: 6px 0 0; font-size: 15px; color: var(--muted); }
+.toolinfo { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; margin-top: 26px; }
+.toolinfo h3 { font-size: 28px; }
+.toolinfo .role { font: 13px var(--mono); color: var(--tomato-ink); margin-top: 6px; }
+.toolinfo p { margin: 12px 0 0; color: var(--muted); }
+.proof { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 14px; }
+.proof h4 { margin: 0 0 10px; font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--teal); }
+.proof ul { margin: 0; padding: 0; list-style: none; font-size: 14px; }
+.proof li { padding: 5px 0 5px 22px; position: relative; border-top: 1px dashed var(--line); }
+.proof li:first-child { border-top: 0; }
+.proof li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+.stackline { font: 12px var(--mono); color: var(--muted); margin-top: 14px; }
+.redact-note { font: 12px var(--mono); color: var(--muted); margin-top: 14px; }
+.lightbox { position: fixed; inset: 0; z-index: 70; background: rgba(15,13,20,.86); display: none; place-items: center; padding: 24px; cursor: zoom-out; }
+.lightbox.open { display: grid; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+
+/* responsive */
+@media (max-width: 960px) {
+  .about .grid { grid-template-columns: 220px 1fr; gap: 32px; }
+  .showcase .layout { grid-template-columns: 1fr; }
+  .toollist { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 6px; }
+  .toollist button { flex: none; }
+  .toolinfo { grid-template-columns: 1fr; }
+  .board { grid-template-columns: repeat(6, 1fr); }
+  .span-5, .span-7, .span-8, .span-6 { grid-column: span 6; }
+  .span-4, .span-3 { grid-column: span 3; }
+  .span-2 { grid-column: span 3; }
+  .hero .grid, .cheap { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .stages { grid-template-columns: repeat(3, 1fr); }
+  .quests { grid-template-columns: 1fr 1fr; }
+  .terminal { transform: none; }
+}
+@media (max-width: 620px) {
+  .wrap { padding: 0 16px; }
+  section { padding: 68px 0; }
+  .links { display: none; }
+  .stats, .cards, .quests { grid-template-columns: 1fr; }
+  .stages { grid-template-columns: repeat(2, 1fr); }
+  .note { grid-template-columns: 1fr; gap: 8px; }
+  .about .grid { grid-template-columns: 1fr; }
+  .about .portrait { max-width: 240px; }
+  .facts { grid-template-columns: 1fr; }
+  .board { grid-template-columns: 1fr; gap: 26px; }
+  .board > * { grid-column: 1 / -1 !important; }
+  .strengths { grid-template-columns: repeat(2, 1fr); }
+  .polaroid { max-width: 280px; margin: 0 auto; }
+  .machine { padding: 18px; box-shadow: 5px 5px 0 var(--ink); }
+  .card { height: 340px; }
+  .mstage { height: 380px; }
+  .bubble { max-width: 200px; font-size: 13px; }
+  .receipt { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <button class="logo" id="logo" type="button" aria-label="Revathy Radhakrishnan, back to top"><span class="dot">RR</span> Revathy</button>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#dossier">Dossier</a>
+      <a href="#showcase">Live tools</a>
+      <a href="#machine">The machine</a>
+      <a href="#blueprint">Blueprint</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#notes">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap grid">
+    <div>
+      <span class="badge"><span class="live" aria-hidden="true"></span> GTM Engineer · Bengaluru · currently shipping</span>
+      <h1>I build the robots that do the <span class="swap" id="swap">boring parts</span> of sales.</h1>
+      <p class="sub">So humans can do the fun parts. I'm Revathy: GTM Operations at AI Intime and Vegam Solutions, where I turn messy lead lists, job postings and CRM chaos into tools the sales team actually uses.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#machine">See the machine ↓</a>
+        <a class="btn" href="mailto:revathyradhakrishnan2412@gmail.com">Hire the human</a>
+      </div>
+      <p class="scribble">psst: type <b>hire</b> anywhere on this page.</p>
+    </div>
+    <div class="mstage" id="stage">
+      <div class="fallback"><img src="photo.jpg" alt="Revathy Radhakrishnan" onerror="this.remove()"><span>RR</span></div>
+      <p class="hint">drag me · poke me · ignore me and I'll nap</p>
+    </div>
+  </div>
+</header>
+<div id="mascot" aria-hidden="true"></div>
+<div class="bubble" id="bubble" role="status" aria-live="polite"></div>
+
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <span class="kicker">About me</span>
+    <div class="grid">
+      <div class="portrait">
+        <img src="photo.jpg" alt="Revathy Radhakrishnan" onerror="this.remove()">
+        <span aria-hidden="true">RR</span>
+      </div>
+      <div class="bio">
+        <h2 id="about-title" style="margin-bottom: 22px;">Hi, I'm Revathy.</h2>
+        <p>I'm a GTM Operations Associate at AI Intime, part of the founding team and reporting directly to the founder, and a Sales and Marketing Associate at its parent company, Vegam Solutions, in Bengaluru. We sell manufacturing software and industrial AI to chemical, batch and discrete manufacturers, mostly in the US.</p>
+        <p>I started out building lead lists and running outbound campaigns by hand. Then I got curious about why so much of it was manual, and started building the tools that do it instead: buying-signal engines, account research, lead cleaning, CRM data operations and n8n automation. Today eight of those tools are live on our internal tools server, and you can see them below.</p>
+        <p>I like problems that sit between people, data and process, and I care about tools that are cheap to run, honest about what they know, and actually used by the sales team.</p>
+        <div class="facts">
+          <div class="fact"><small>Based in</small><b>Bengaluru, India</b></div>
+          <div class="fact"><small>Experience</small><b>2 years in GTM, plus a 3-year internship at Vegam</b></div>
+          <div class="fact"><small>Education</small><b>B.Sc. Electronics, KLE Technological University · CGPA 8.72</b></div>
+          <div class="fact"><small>Certified</small><b>HubSpot Inbound Marketing</b></div>
+          <div class="fact"><small>I build with</small><b>n8n, Claude Code, Python, Docker, Apollo, Twenty CRM</b></div>
+          <div class="fact"><small>Looking for</small><b>GTM engineering, GTM operations and growth roles</b></div>
+        </div>
+        <div class="ctas">
+          <a class="btn primary" href="Revathy_Radhakrishnan_Resume.pdf" download="Revathy_Radhakrishnan_Resume.pdf">⬇ Download my resume <span class="sub-note">PDF</span></a>
+          <a class="btn" href="mailto:revathyradhakrishnan2412@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/revathy-radhakrishnan" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dossier" id="dossier" aria-labelledby="dossier-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">Personal dossier · File 026</span>
+      <h2 id="dossier-title">Case file: who is Revathy?</h2>
+      <p class="lede">An investigation into one curious operator. Evidence pinned below. Proceed with caution: subject may start automating your workflow.</p>
+    </div>
+
+    <div class="board">
+      <!-- row 1 -->
+      <div class="paper file-card span-5" style="--tilt:-1.2deg">
+        <span class="filetag">FILE 026</span>
+        <div class="label">PERSONAL DOSSIER</div>
+        <h2>THE <span>CURIOUS</span> OPERATOR</h2>
+        <div class="subject">SUBJECT: <b>Revathy Radhakrishnan</b></div>
+        <div class="tags">GTM | Growth | AI Workflows | Market Intelligence</div>
+      </div>
+      <div class="span-3">
+        <div class="polaroid" style="--tilt:2.5deg">
+          <div class="ph">
+            <img src="photo.jpg" alt="Revathy Radhakrishnan" onerror="this.remove()">
+            <span class="initials" aria-hidden="true">RR</span>
+          </div>
+          <div class="cap">the suspect ♡</div>
+        </div>
+      </div>
+      <div class="span-4" style="display:grid; gap:22px;">
+        <div class="paper" style="--tilt:1deg">
+          <h3 class="tw">MISSION</h3>
+          <p class="hand" style="font-size:22px; line-height:1.3">To investigate problems at the intersection of industry, technology and people, and build practical, human-centred solutions that create real business value.</p>
+        </div>
+        <div class="sticky" style="--tilt:-3deg; justify-self:end; max-width:230px;">Big dreams.<br>Bigger learning.<br>Same curiosity. ♡</div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="paper identity span-4" style="--tilt:.8deg">
+        <h3 class="tw">IDENTITY</h3>
+        <ul>
+          <li><span>👤</span><span>Sales &amp; Marketing Associate at Vegam Solutions; GTM Operations at AI Intime</span></li>
+          <li><span>📍</span><span>Bengaluru (for now)</span></li>
+          <li><span>🎓</span><span>B.Sc. Electronics, KLE Technological University · CGPA 8.72</span></li>
+          <li><span>⚙️</span><span>HubSpot Inbound Marketing Certified</span></li>
+        </ul>
+      </div>
+      <div class="sticky span-2" style="--tilt:-2deg">Investigate.<br>Understand.<br>Ask "what if?"<br>Build.<br>Repeat. ♡</div>
+      <div class="sticky span-2" style="--tilt:3deg; background:#FFF3A6;">Curious<br>Capable<br>Kind<br>Chaotic (organising)<br>Driven<br>— Revathy ♡</div>
+      <div class="paper span-4" style="--tilt:-.6deg">
+        <h3 class="tw">CORE STRENGTHS</h3>
+        <div class="strengths">
+          <div><i>🔍</i>Curiosity<small>asks better questions</small></div>
+          <div><i>📄</i>Research<small>connects dots</small></div>
+          <div><i>⚡</i>Execution<small>ideas into action</small></div>
+          <div><i>✏️</i>Communication<small>writes, presents, creates</small></div>
+          <div><i>⚙️</i>Systems thinking<small>builds workflows</small></div>
+          <div><i>🔀</i>Cross-domain<small>marketing → tech → industry</small></div>
+          <div><i>💡</i>Storytelling<small>makes complex simple</small></div>
+          <div><i>♥</i>Resilience<small>keeps going</small></div>
+        </div>
+      </div>
+
+      <!-- row 3: evidence -->
+      <div class="paper span-4" style="--tilt:-.8deg">
+        <h3 class="tw">EVIDENCE 1: GTM &amp; RESEARCH</h3>
+        <ul>
+          <li>Built GTM signal engines that combine events and signals from multiple platforms</li>
+          <li>Used the Gemini and Claude APIs</li>
+          <li>Built Event Radar and the GTM Data Flow tool</li>
+          <li>Created a signal taxonomy and pain graphs</li>
+          <li>Generated target lists for each ICP</li>
+        </ul>
+        <div class="demo-links">
+          <a href="https://event-radar-sooty.vercel.app" target="_blank" rel="noopener">event-radar-sooty.vercel.app ↗</a>
+          <a href="https://gtm-data-flow.vercel.app" target="_blank" rel="noopener">gtm-data-flow.vercel.app ↗</a>
+        </div>
+      </div>
+      <div class="paper span-4" style="--tilt:.7deg">
+        <h3 class="tw">EVIDENCE 2: AUTOMATION &amp; TOOLS</h3>
+        <ul>
+          <li>Connected 20 CRM accounts using n8n</li>
+          <li>Integrated multiple CRM tools via webhooks</li>
+          <li>Read and processed people data</li>
+          <li>Automated parts of outbound workflows</li>
+          <li>Worked with Clay, Apollo, Instantly, Dripify, Wiza and Lusha</li>
+        </ul>
+        <div class="pipeline">GPT → Apollo / LinkedIn → n8n → Clay → Instantly / Dripify = a scalable pipeline 🤖</div>
+      </div>
+      <div class="paper span-4" style="--tilt:-.5deg">
+        <h3 class="tw">EVIDENCE 3: PRODUCT &amp; MARKETING</h3>
+        <ul>
+          <li>Positioning and go-to-market for industrial and enterprise AI products</li>
+          <li>Website strategy and content for Vegam Solutions and AI Intime</li>
+          <li>Industry pages, use cases and the AI ROI Map</li>
+          <li>Competitor and market-positioning research</li>
+          <li>Supported event planning (PartnerConnect 2025)</li>
+          <li>Marketing content: videos, posts, creatives</li>
+        </ul>
+      </div>
+
+      <!-- row 4 -->
+      <div class="paper span-4" style="--tilt:.9deg">
+        <h3 class="tw">EVIDENCE 4: OUTREACH &amp; PIPELINE</h3>
+        <p>From research to real conversations.</p>
+        <ul>
+          <li>Personalised outbound across email and LinkedIn</li>
+          <li>Cold prospects turned into qualified meetings</li>
+          <li>Lists built and validated before a single email went out</li>
+        </ul>
+        <p class="hand" style="font-size:21px; margin-top:12px;">Small conversations today, bigger opportunities tomorrow. ♡</p>
+      </div>
+      <div class="paper span-4" style="--tilt:-.7deg">
+        <h3 class="tw">EVIDENCE 5: CONTENT &amp; STORY</h3>
+        <ul>
+          <li>Use-case explainer videos (BOM extraction, lab reports, instrument printouts)</li>
+          <li>Designed visual concepts and website content</li>
+          <li>Built the AI ROI Map and industry narratives</li>
+          <li>Experimented with creative formats to explain complex ideas</li>
+        </ul>
+      </div>
+      <div class="paper span-4" style="--tilt:.5deg">
+        <h3 class="tw">ONGOING INVESTIGATIONS (2026 →)</h3>
+        <ul class="checklist">
+          <li>Master pipeline automation and n8n</li>
+          <li>Generate 10 discovery calls a month</li>
+          <li>Build thought leadership (3–4 LinkedIn posts a week)</li>
+          <li>MBA in Marketing</li>
+          <li>Get into a Growth / SDR role</li>
+          <li>Better health and fitness (−5 kg)</li>
+          <li>Build financial stability (investments, iPhone 17 🎧)</li>
+          <li>New hobbies, travel, and a life I'm proud of ♡</li>
+        </ul>
+      </div>
+
+      <!-- row 5 -->
+      <div class="paper crime span-5" style="--tilt:-1deg">
+        <h3>THE BIGGEST CRIME AGAINST COMMON SENSE</h3>
+        <p class="hand">Asking for a master plan before finishing the last 12 side quests.</p>
+        <button class="stamp" type="button" id="guilty">GUILTY<small>(as charged)</small></button>
+      </div>
+      <div class="sticky verdict span-3" style="--tilt:2deg">
+        <div class="tw" style="font-size:20px; margin-bottom:6px;">VERDICT ⚖️</div>
+        High curiosity. Chronic overthinking. Too many ideas. But always learning, always building, and never giving up.
+        <div><button class="stamp" type="button" id="caseOpen">CASE STILL OPEN</button></div>
+      </div>
+      <div class="paper chalk nopin span-4" style="--tilt:.8deg">
+        <h3 class="tw">FINAL NOTES</h3>
+        <ul>
+          <li>Keep being curious</li>
+          <li>Go deeper, not just broader</li>
+          <li>Finish what I start</li>
+          <li>Turn ideas into measurable impact</li>
+          <li>You're doing better than you think ♡</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="receipts" id="receipts">
+  <div class="wrap">
+    <span class="kicker">The receipts</span>
+    <h2>Numbers, because "very hardworking" isn't a metric.</h2>
+    <p class="lede">All from the last two years. No rounding up to the nearest billion.</p>
+    <div class="stats">
+      <div class="stat"><b data-count="8">8</b><span>internal GTM tools built</span><small>with AI-assisted development</small></div>
+      <div class="stat"><b data-count="41">41</b><span>n8n workflows moved from Cloud to self-hosted</span><small>41 of 41. Nobody left behind.</small></div>
+      <div class="stat"><b data-count="8806" data-sep="1">8,806</b><span>CRM records backfilled from HubSpot</span><small>99% matched. Zero records harmed.</small></div>
+      <div class="stat"><b><span data-count="63">63</span>→<span data-count="92">92</span></b><span>website technical health, out of 100</span><small>13 audit cycles. Many fonts were scolded.</small></div>
+      <div class="stat"><b><span data-count="5">5</span>→<span data-count="13">13</span></b><span>Lead Research benchmark score, out of 15</span><small>v1 vs v2, same lead, one day apart</small></div>
+      <div class="stat"><b data-count="20000" data-sep="1" data-suffix="">20,000</b><span>companies enriched, filtered and scored by n8n</span><small>instead of by my eyeballs</small></div>
+      <div class="stat"><b data-count="10000" data-sep="1" data-suffix="+">10,000+</b><span>ICP-aligned leads validated</span><small>US, India, Gulf, Australia, Mexico, NZ</small></div>
+      <div class="stat"><b data-count="5900" data-sep="1" data-suffix="+">5,900+</b><span>companies on one account list, every row web-checked</span><small>yes, every row</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase" id="showcase" aria-labelledby="showcase-title">
+  <div class="wrap">
+    <span class="kicker">Proof, not promises</span>
+    <h2 id="showcase-title">The real tools. Live, in production.</h2>
+    <p class="lede">These are actual screens from the tools I built, running today on our internal sales tools server (VPN only, so no public links). Pick a tool, then step through a real task from start to finish.</p>
+    <div class="layout">
+      <div class="toollist" role="tablist" aria-label="Live tools" id="toollist"></div>
+      <div>
+        <div class="window">
+          <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="addr" id="tooladdr"></span></div>
+          <button class="shot" id="toolshot" type="button" aria-label="Open the screenshot full size"><img id="toolimg" alt=""></button>
+          <div class="steps-bar">
+            <span class="count" id="stepcount"></span>
+            <div class="dots" id="stepdots" aria-label="Walkthrough steps"></div>
+            <div class="nav">
+              <button type="button" id="stepprev" aria-label="Previous step">‹ Prev</button>
+              <button type="button" id="stepplay" aria-label="Play the walkthrough">▶ Play</button>
+              <button type="button" id="stepnext" aria-label="Next step">Next ›</button>
+            </div>
+          </div>
+          <div class="stepcap" aria-live="polite"><b id="steptitle"></b><p id="stepcap"></p></div>
+        </div>
+        <div class="toolinfo" role="tabpanel" id="toolpanel">
+          <div>
+            <h3 id="toolname"></h3>
+            <div class="role" id="toolrole"></div>
+            <p id="tooldesc"></p>
+            <div class="stackline" id="toolstack"></div>
+          </div>
+          <div class="proof"><h4>Proof</h4><ul id="toolproof"></ul></div>
+        </div>
+        <p class="redact-note">Screens captured from the live tools, using saved results only (no new paid searches). Most frames blur company and contact details. The Decision Engine walkthrough and the Account Pyramid's outreach steps are the exceptions, shown in full (with phone numbers removed): the facts in them come from public sources. The Data Cleaner steps use a dummy file.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Screenshot, full size"><img id="lightimg" alt=""></div>
+
+<section id="machine">
+  <div class="wrap">
+    <span class="kicker">The GTM machine</span>
+    <h2>Feed it a cold lead. Get a meeting.</h2>
+    <p class="lede">This is how my tools fit together, from "who is this company" to "a human is booking a call". Press the button and watch it go.</p>
+    <div class="machine">
+      <ol class="stages" id="stages">
+        <li class="stage"><span class="ico" aria-hidden="true">📡</span><b>Sense</b><small>signals</small></li>
+        <li class="stage"><span class="ico" aria-hidden="true">⚖️</span><b>Qualify</b><small>ICP fit</small></li>
+        <li class="stage"><span class="ico" aria-hidden="true">🔎</span><b>Research</b><small>meeting prep</small></li>
+        <li class="stage"><span class="ico" aria-hidden="true">✉️</span><b>Enrich</b><small>emails</small></li>
+        <li class="stage"><span class="ico" aria-hidden="true">🗂️</span><b>Score + sync</b><small>CRM</small></li>
+        <li class="stage"><span class="ico" aria-hidden="true">📅</span><b>Meet</b><small>humans only</small></li>
+      </ol>
+      <div class="controls">
+        <div class="caption" aria-live="polite"><span class="token" id="token" aria-hidden="true">🥶</span><span id="captionText">A cold lead is waiting. It has no idea what's about to happen.</span></div>
+        <button class="btn primary" id="run" type="button">Feed it a cold lead</button>
+      </div>
+      <p class="fineprint">Simplified. The real architecture has 6 stages, 5 layers and considerably more arrows.</p>
+    </div>
+    <p class="fineprint" style="margin-top: 44px;">Same pipeline, terminal edition, for people who skipped the button:</p>
+    <div class="terminal" aria-label="A pretend terminal showing a lead being processed">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <pre id="term" aria-live="off"></pre>
+    </div>
+  </div>
+</section>
+
+<section id="blueprint">
+  <div class="wrap">
+    <span class="kicker">The blueprint</span>
+    <h2>How I'd build your GTM stack.</h2>
+    <p class="lede">This is the architecture my tools already run at AI Intime: six stages, one shared signal record, and an account heat score deciding what happens next. Click a stage to open it.</p>
+    <div class="bp">
+      <div class="bp-rail" id="bpRail" role="tablist" aria-label="GTM stages"></div>
+      <div class="bp-detail">
+        <h3 id="bpTitle"></h3>
+        <p id="bpText"></p>
+        <div class="bp-meta">
+          <div><h4>My tools on this stage</h4><div class="chips" id="bpTools"></div></div>
+          <div><h4>What flows out</h4><p class="bp-out" id="bpOut"></p></div>
+        </div>
+      </div>
+      <p class="fineprint">Under every stage, the same rails: one Signal Card contract → a staging table → dedupe by web domain → the CRM. A heat score with 30-day decay routes each account: hot → book the meeting · strong → run the research · medium → keep nurturing · market-level → feed content.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cards" style="padding-top: 24px;">
+  <div class="wrap">
+    <span class="kicker">Collect them all</span>
+    <h2>My tools, as trading cards.</h2>
+    <p class="lede">Eight tools I built for the sales team (one co-built). Click a card to flip it and see what it really does.</p>
+    <div class="cards" id="cardGrid"></div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="wrap">
+    <span class="kicker">Personality check</span>
+    <h2>Which of my tools are you?</h2>
+    <p class="lede">Five questions, one trading card at the end. Exactly as scientific as it sounds.</p>
+    <div class="quiz-box" id="quizBox" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="cheap">
+  <div class="wrap cheap">
+    <div>
+      <span class="kicker">Fiscally responsible robots</span>
+      <h2>I'm cheap. For robots.</h2>
+      <p class="lede">AI tools are easy to build and easy to overspend on. Every tool I ship gets a budget before it gets a launch party: prompt caching, search caps, free-tier data sources and monthly spend limits that actually stop spending.</p>
+    </div>
+    <div class="receipt" aria-label="A receipt showing cost savings">
+      <h3>RECEIPT #0001</h3>
+      <div class="row"><span>Lead research report (before)</span><s>~$3.00</s></div>
+      <div class="row"><span>Prompt caching</span><span>applied</span></div>
+      <div class="row"><span>Web searches per report</span><span>20 → 12</span></div>
+      <div class="row total"><span>Projected cost (after)</span><span>$1.00–1.40</span></div>
+      <div class="row"><span>New tools on free-tier data</span><span>yes</span></div>
+      <div class="row"><span>Monthly spend caps</span><span>enforced</span></div>
+      <div class="row"><span>Surprise invoices</span><span>0</span></div>
+      <p class="thanks">*** THANK YOU, COME AGAIN ***</p>
+    </div>
+  </div>
+</section>
+
+<section id="notes" style="background: var(--surface-2);">
+  <div class="wrap">
+    <span class="kicker">Experience, as patch notes</span>
+    <h2>Release history</h2>
+    <p class="lede">Every version shipped to production. Known issues disclosed in the interest of transparency.</p>
+    <div class="notes">
+      <article class="note">
+        <div class="ver">v2.0<small>Oct 2025 →</small></div>
+        <div>
+          <h3>GTM Operations Associate</h3>
+          <p class="co">AI Intime (a Vegam Solutions company) · founding team, reporting directly to the founder · Bengaluru</p>
+          <ul>
+            <li class="add">Built 7 internal GTM tools end to end and deployed them with Docker, including Event Explorer: which target companies showed up at past events, and who spoke</li>
+            <li class="add">Co-authored the Lead Research engine with a teammate and packaged it as a Claude Code skill and plugin</li>
+            <li class="add">Designed the "Path to Sales" architecture: signal tools → shared signal record → CRM</li>
+            <li class="add">9 n8n workflows scoring a 20,000-company list; moved all 41 workflows to self-hosted n8n</li>
+            <li class="add">29 custom CRM fields; 8,806 of 8,875 records backfilled from HubSpot</li>
+            <li class="add">A 5,900+ company account list, every single row checked on the web</li>
+            <li class="add">Co-authored the aiintime.com website content with the team</li>
+            <li class="add">SEO, AEO and GEO audit cycles: technical health 63 → 92, Lighthouse performance 99–100</li>
+            <li class="add">GA4 conversion-funnel events and a UTM link builder</li>
+            <li class="add">LinkedIn content system: 94-idea plan, 18 flagship posts, carousel pipeline</li>
+            <li class="add">Code-built product explainer videos</li>
+            <li class="fix">Fixed an authentication bypass in the product sandbox signup</li>
+            <li class="bug">Known issue: writes a handoff document for literally everything</li>
+            <li class="bug">Known issue: says "one last feature" at 6:58 pm</li>
+          </ul>
+        </div>
+      </article>
+      <article class="note">
+        <div class="ver">v1.0<small>Oct 2024 →</small></div>
+        <div>
+          <h3>Sales and Marketing Associate</h3>
+          <p class="co">Vegam Solutions · Bengaluru</p>
+          <ul>
+            <li class="add">Generated, enriched and validated 10,000+ ICP-aligned leads across six regions</li>
+            <li class="add">Personalised outbound across email and LinkedIn that turned cold prospects into qualified meetings</li>
+            <li class="add">Account lists for manufacturing software, from power plants to food and beverage</li>
+            <li class="add">Researched 390+ software directories; listed AI Intime on 32+, including G2, Capterra and Product Hunt</li>
+            <li class="bug">Known issue: realised most of this could be automated (see v2.0)</li>
+          </ul>
+        </div>
+      </article>
+      <article class="note">
+        <div class="ver">v0.1<small>Jun 2021 – Oct 2024</small></div>
+        <div>
+          <h3>Intern, Application Engineer</h3>
+          <p class="co">Vegam Solutions, Hubli-Dharwad branch · alongside a B.Sc. in Electronics (Industry Track), KLE Technological University</p>
+          <ul>
+            <li class="add">Digital maintenance workflows, SOP configuration and asset data mapping</li>
+            <li class="bug">Known issue: also had exams</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="quests">
+  <div class="wrap">
+    <span class="kicker">Side quests</span>
+    <h2>Also, the marketing stuff.</h2>
+    <p class="lede">GTM is not just pipelines. Some days it's fonts, funnels and a voice-over.</p>
+    <div class="quests">
+      <div class="quest"><div class="q" aria-hidden="true">🩺</div><h3>Website doctor</h3><p>13 SEO, AEO and GEO audit cycles on aiintime.com. Health score 63 → 92, zero accessibility violations, structured data and security headers added.</p></div>
+      <div class="quest"><div class="q" aria-hidden="true">📈</div><h3>Traffic plan</h3><p>Keyword research, a blog calendar, new blog posts and a new use-case page, plus GA4 funnel events so we know what actually converts.</p></div>
+      <div class="quest"><div class="q" aria-hidden="true">🎬</div><h3>Explainer videos</h3><p>Product use-case videos, built with code. Yes, code. The cursor moves on its own.</p></div>
+      <div class="quest"><div class="q" aria-hidden="true">✍️</div><h3>LinkedIn engine</h3><p>A content system for the company page: 94 post ideas across 10 pillars and 18 flagship posts with carousels.</p></div>
+      <div class="quest"><div class="q" aria-hidden="true">📚</div><h3>Context and skills files</h3><p>The product context every tool and post reads from, plus Claude skills and plugins built on it, so the robots all tell the same story.</p></div>
+      <div class="quest"><div class="q" aria-hidden="true">🧾</div><h3>Look-alike and competitor research</h3><p>Look-alike account lists, competitor maps that show who decides on AI and how to get in, and meeting-prep briefs for leadership sales calls.</p></div>
+    </div>
+
+    <h3 style="margin-top: 64px; font-size: 26px;">Toolbox</h3>
+    <div class="chips">
+      <span class="chip">n8n</span><span class="chip">Claude Code</span><span class="chip">Claude API</span><span class="chip">Apollo</span>
+      <span class="chip">LinkedIn Sales Navigator</span><span class="chip">Instantly</span><span class="chip">Prospeo</span><span class="chip">ZeroBounce</span>
+      <span class="chip">Clay</span><span class="chip">Twenty CRM</span><span class="chip">HubSpot</span><span class="chip">JustCall</span>
+      <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Next.js</span><span class="chip">Docker</span><span class="chip">Git</span>
+      <span class="chip">Apify</span><span class="chip">GA4</span><span class="chip">Lighthouse</span><span class="chip">Technical SEO</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="kicker">Last stage of the machine</span>
+    <h2>This is where a human books a meeting.</h2>
+    <p class="lede">Looking for someone who can build your outbound machine and still enjoys talking to people? That's me. I reply faster than my n8n schedules.</p>
+    <div class="ctas">
+      <a class="btn primary" href="mailto:revathyradhakrishnan2412@gmail.com">revathyradhakrishnan2412@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/revathy-radhakrishnan" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <p class="scribble">or punch the tiny Revathy in the corner (she's wearing gloves now) to copy my email 🥊</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Built with Claude Code and a lot of chai. No CRM records were harmed in the making of this site. · Try typing <kbd>hire</kbd> or <kbd>style</kbd>.</div>
+</footer>
+
+<div class="bgfx" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* rotating hero word */
+  var words = ["boring parts", "copy-pasting", "spreadsheet chaos", "manual research", "3 pm lead lists"];
+  var wi = 0, swap = document.getElementById("swap");
+  if (!reduce) setInterval(function () { wi = (wi + 1) % words.length; swap.textContent = words[wi]; }, 2600);
+
+  /* terminal */
+  var term = document.getElementById("term");
+  var script = [
+    ["$ ", "revathy run --lead \"Acme Manufacturing\"", "p"],
+    ["", "📡 signal: hiring 3 QC analysts", "ok"],
+    ["", "⚖️  ICP fit: strong", "ok"],
+    ["", "🔎 research: 14-section prep doc ready", "ok"],
+    ["", "✉️  email: found, verified", "ok"],
+    ["", "🗂️  CRM: synced, deduped by domain", "ok"],
+    ["", "📅 next step: a human books the call", "ok"],
+    ["", "done in 7 min. coffee still warm ☕", "dim"]
+  ];
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function renderStatic() {
+    term.innerHTML = script.map(function (l) { return '<span class="' + (l[0] ? "p" : l[2]) + '">' + esc(l[0]) + "</span>" + esc(l[1]); }).join("\n");
+  }
+  if (reduce) { renderStatic(); } else {
+    var line = 0, ch = 0, out = "";
+    function tick() {
+      if (line >= script.length) {
+        term.innerHTML = out + '<span class="cursor"></span>';
+        setTimeout(function () { line = 0; ch = 0; out = ""; tick(); }, 4200);
+        return;
+      }
+      var l = script[line];
+      if (ch === 0) out += '<span class="' + (l[0] ? "p" : l[2]) + '">' + esc(l[0]) + "</span>";
+      if (l[0]) {
+        out += esc(l[1].charAt(ch)); ch++;
+        term.innerHTML = out + '<span class="cursor"></span>';
+        if (ch < l[1].length) return setTimeout(tick, 38);
+      } else {
+        out += '<span class="' + l[2] + '">' + esc(l[1]) + "</span>";
+        term.innerHTML = out + '<span class="cursor"></span>';
+      }
+      out += "\n"; line++; ch = 0;
+      setTimeout(tick, l[0] ? 420 : 520);
+    }
+    tick();
+  }
+
+  /* counters */
+  function fmt(n, sep) { return sep ? n.toLocaleString("en-US") : String(n); }
+  function countUp(el) {
+    if (el.dataset.done) return; el.dataset.done = "1";
+    var target = +el.dataset.count, sep = el.dataset.sep, suf = el.dataset.suffix || "";
+    if (reduce) { el.textContent = fmt(target, sep) + suf; return; }
+    var t0 = null, dur = 1300;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(Math.round(target * e), sep) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = document.querySelectorAll("[data-count]");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.querySelectorAll ? null : null; countUp(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    counters.forEach(function (c) { io.observe(c); });
+  } else { counters.forEach(countUp); }
+
+  /* machine */
+  var captions = [
+    ["📡", "Sense: Job Signal Engine, Signal Engine and Event Radar notice a company that might need us. It's hiring for exactly the problem we solve."],
+    ["⚖️", "Qualify: Decision Engine checks ICP fit and shows its working. Account Pyramid files it by size and industry."],
+    ["🔎", "Research: Lead Research writes the meeting prep. Who they are, why now, what to say, what not to say."],
+    ["✉️", "Enrich: email waterfall. Apollo first, ZeroBounce verifies, Prospeo as backup. Data Cleaner tidies the rest."],
+    ["🗂️", "Score + sync: n8n scores it, dedupes by web domain and drops it into the CRM. No duplicates. I have rules."],
+    ["📅", "Meet: a human books the meeting. Robots don't do small talk. Yet."]
+  ];
+  var stages = document.querySelectorAll(".stage"), runBtn = document.getElementById("run"),
+      token = document.getElementById("token"), cap = document.getElementById("captionText"), running = false;
+  runBtn.addEventListener("click", function () {
+    if (running) return; running = true; runBtn.disabled = true; runBtn.textContent = "Processing…";
+    stages.forEach(function (s) { s.classList.remove("active", "done"); });
+    var i = 0;
+    (function next() {
+      if (i > 0) { stages[i - 1].classList.remove("active"); stages[i - 1].classList.add("done"); }
+      if (i === stages.length) {
+        token.textContent = "🔥"; cap.textContent = "Cold lead → warm meeting. That's the whole job, really.";
+        runBtn.disabled = false; runBtn.textContent = "Run it again"; running = false; burst(40); return;
+      }
+      stages[i].classList.add("active");
+      token.textContent = captions[i][0]; cap.textContent = captions[i][1];
+      i++; setTimeout(next, reduce ? 900 : 1900);
+    })();
+  });
+
+  /* trading cards */
+  var cards = [
+    { n: "Job Signal Engine", cls: "Signal hunter", ico: "📡", r: "Legendary", rc: "leg",
+      pw: "Spots companies hiring for roles that mean <em>\"we have this problem\"</em>.",
+      wk: "Weakness: gets far too excited about lab job postings.",
+      back: "Searches job postings on LinkedIn, Adzuna and Google Jobs, flags matches against a 1,805-account focus list, and finds the heads and managers sales should contact. Runs on free-tier sources with monthly spend caps.",
+      st: "Python · Docker · Apify · Claude API" },
+    { n: "Lead Research v2", cls: "Detective", ico: "🔎", r: "Epic", rc: "epi",
+      pw: "Turns one LinkedIn URL into a <em>14-section meeting prep report</em>.",
+      wk: "Weakness: refuses to invent email addresses. Annoyingly honest.",
+      back: "Co-authored v1, built v2. Benchmark score went from 5 to 13 out of 15 against human-assisted research. Email waterfall: Apollo, ZeroBounce, Prospeo. Now also a Claude Code plugin with PDF reports.",
+      st: "Next.js · Claude API" },
+    { n: "Account Pyramid", cls: "Organiser", ico: "🔺", r: "Rare", rc: "rar",
+      pw: "Stacks target accounts by <em>size and industry</em>, all 8 of them.",
+      wk: "Weakness: thinks everything is a pyramid.",
+      back: "A page per company, per-person lead status, team LinkedIn connection imports, and 3,137 contacts matched to their public LinkedIn profiles.",
+      st: "Python · Docker" },
+    { n: "Decision Engine", cls: "Judge", ico: "⚖️", r: "Rare", rc: "rar",
+      pw: "Says <em>fit</em> or <em>not fit</em>, and shows its working.",
+      wk: "Weakness: cannot be bribed.",
+      back: "Researches a company against the ideal customer profile and returns a fit decision with the evidence behind it, so nobody argues from vibes.",
+      st: "Python · FastAPI" },
+    { n: "Event Explorer", cls: "Cartographer", ico: "🗺️", r: "Rare", rc: "rar",
+      pw: "Knows which target companies showed up at <em>past editions</em> of an event.",
+      wk: "Weakness: knows who attended, still hasn't been invited.",
+      back: "Maps industry events to the companies seen at earlier editions and their speakers, and links every company back to the account list.",
+      st: "Python" },
+    { n: "Event Radar", cls: "Scout", ico: "🛰️", r: "Uncommon", rc: "unc",
+      pw: "Finds upcoming <em>in-person industry events</em> by city and industry.",
+      wk: "Weakness: has never actually been to an event.",
+      back: "My first build (March 2026). Searches the web live for trade shows, conferences and meetups where target buyers will be in the room.",
+      st: "JavaScript · React · Claude web search" },
+    { n: "Signal Engine", cls: "Listener", ico: "👂", r: "Uncommon", rc: "unc",
+      pw: "Turns public conversations into <em>buying signals</em>, by industry.",
+      wk: "Weakness: eavesdrops. Professionally.",
+      back: "A market-listening tool: it reads public operational conversations and turns them into structured signals, so we know which pains are trending where.",
+      st: "Python" },
+    { n: "Data Cleaner", cls: "Janitor", ico: "🧹", r: "Common (essential)", rc: "unc",
+      pw: "Cleans lead lists <em>before</em> they touch the CRM.",
+      wk: "Weakness: silently judges your spreadsheet formatting.",
+      back: "A 9-step lead cleaning and CRM preparation pipeline: Apollo import, Prospeo enrichment, ZeroBounce verification, clean-up and CRM mapping. The least glamorous tool. The most important one.",
+      st: "JavaScript" }
+  ];
+  var grid = document.getElementById("cardGrid");
+  cards.forEach(function (c, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "card c" + (i + 1); b.setAttribute("aria-pressed", "false");
+    b.setAttribute("aria-label", c.n + ". Click to flip.");
+    b.innerHTML =
+      '<div class="inner">' +
+        '<div class="face front">' +
+          '<div class="rarity"><span>No. 0' + (i + 1) + '</span><span class="r ' + c.rc + '">' + c.r + '</span></div>' +
+          '<div class="art" aria-hidden="true">' + c.ico + '</div>' +
+          '<h3>' + c.n + '</h3><div class="cls">Class: ' + c.cls + '</div>' +
+          '<div class="power">' + c.pw + '</div>' +
+          '<div class="weak">' + c.wk + '</div>' +
+          '<div class="flip-hint">flip ↻</div>' +
+        '</div>' +
+        '<div class="face back">' +
+          '<div class="rarity"><span>What it really does</span></div>' +
+          '<h3 style="margin-top:10px">' + c.n + '</h3>' +
+          '<p>' + c.back + '</p>' +
+          '<div class="stack">' + c.st + '</div>' +
+        '</div>' +
+      '</div>';
+    b.addEventListener("click", function () { b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true"); });
+    grid.appendChild(b);
+  });
+
+  /* toast + confetti + easter eggs */
+  var toastEl = document.getElementById("toast"), tt;
+  function toast(msg) { toastEl.innerHTML = msg; toastEl.classList.add("show"); clearTimeout(tt); tt = setTimeout(function () { toastEl.classList.remove("show"); }, 4200); }
+  function burst(n) {
+    if (reduce) return;
+    var colors = ["#FF5A36", "#FFC93C", "#0F9F8F", "#7C6CF0", "#1D1B26"];
+    for (var i = 0; i < n; i++) {
+      var d = document.createElement("div"); d.className = "confetti";
+      d.style.left = Math.random() * 100 + "vw"; d.style.background = colors[i % colors.length];
+      d.style.animationDuration = (1.8 + Math.random() * 1.8) + "s"; d.style.animationDelay = (Math.random() * .4) + "s";
+      document.body.appendChild(d); setTimeout(function (el) { el.remove(); }.bind(null, d), 4200);
+    }
+  }
+  var typed = "";
+  document.addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("input, textarea")) return;
+    if (!e.key || e.key.length !== 1) return;
+    typed = (typed + e.key.toLowerCase()).slice(-5);
+    if (typed === "style") {
+      document.dispatchEvent(new CustomEvent("rr-dressup"));
+    }
+    if (typed.slice(-4) === "hire") {
+      burst(90);
+      toast('🎉 Excellent decision. <a href="mailto:revathyradhakrishnan2412@gmail.com" style="color:var(--sun)">Send the email →</a>');
+    }
+  });
+  window.rrToast = toast; window.rrBurst = burst;
+
+  /* live tools showcase */
+  var TOOLS = [
+    { id: "job-signals", n: "Job Signal Engine", live: true, addr: "tools · job-signals", role: "Built it end to end · live since 21 Sep 2026",
+      d: "Finds US companies hiring for lab and quality roles that signal they need what we sell. It searches LinkedIn, Adzuna and Google Jobs, has Claude explain why each opening matters, flags companies on our 1,805-account focus list, and finds the heads and managers sales should call.",
+      p: ["35 searches saved in history", "Total Claude spend for all of them: $6.85", "Up to 88 companies and 394 job posts collected per search", "Monthly spend caps on every paid source"],
+      s: "Python · Docker · Apify · Claude API",
+      steps: [
+        { img: "jse-1", t: "Pick the job titles", c: "One or more lab job titles from 23 presets grouped by QC, QA, regulatory and lab leadership. Choose how recent the postings should be and which sources to search: LinkedIn, Adzuna, Google Jobs. The Claude analysis is optional and capped." },
+        { img: "jse-2", t: "Every search is saved", c: "History keeps every run: titles, settings, jobs collected and filtered out, companies found by size, and the exact Claude spend per run. Reopening a search is free; a re-run reuses anything fetched in the last 12 hours." },
+        { img: "jse-3", t: "Companies ranked by fit score", c: "Results are one card per company, ranked by a fit score with a one-line reason. The red badge means the company is on our focus list, so it matches a search in every run." },
+        { img: "jse-4", t: "Why it's a signal, and who to call", c: "Expand a card: why the hiring matters for us, the possible pains with the quote from the posting, the open jobs, the score breakdown, and the heads and managers to contact with their LinkedIn profiles." }
+      ] },
+    { id: "account-pyramid", n: "Account Pyramid", live: true, addr: "tools · account-pyramid", role: "Built it end to end · live since 5 Oct 2026",
+      d: "Our US target accounts as a pyramid: Enterprise, Mid size and Small, split by industry. Every signal the other tools produce lands on the company's row and page: open jobs, contacts, LinkedIn activity, events, FDA recalls, use case.",
+      p: ["2,059 US accounts and 1,000 European accounts loaded", "A 9-tab page for every company", "8 industries, 2 use cases", "3,137 contacts matched to public LinkedIn profiles", "Per-person LinkedIn outreach drafted from ticked facts"],
+      s: "Python · Docker",
+      steps: [
+        { img: "pyr-1", t: "The pyramid", c: "2,059 US accounts in three tiers by company size, coloured by industry. Tap a tier to open it." },
+        { img: "pyr-2", t: "Industries inside a tier", c: "The Enterprise tier: 338 companies across 8 industries, from Pharma (38) to Materials, coatings and packaging (70). Tap an industry card for its companies." },
+        { img: "pyr-3", t: "Every signal on one row", c: "Per company: open jobs from the Job Signal Engine, contacts, LinkedIn activity, events attended (from Event Explorer), FDA recalls and the matching use case. Filter by any signal, then copy or download the list." },
+        { img: "pyr-4", t: "Inside a company", c: "Click any company to open its own page. Nine tabs collect everything we know about the account in one place: the company profile, LinkedIn connections, buying signals, events attended, use-case signals, FDA recalls, the regulatory record, LinkedIn comments and employees." },
+        { img: "pyr-5", t: "Why now: live job openings", c: "Open roles found by the Job Signal Engine, how long they have been live, and a one-line reason they point to our product, with the matching use case. One click jumps to the full search." },
+        { img: "pyr-6", t: "Why us: use-case signals", c: "Public records tagged against our use cases with rules from the product context: each one shows its strength, cause, source and date, and why it counts, plus how many manufacturing sites the account runs." },
+        { img: "pyr-7", t: "Who to talk to", c: "Employees grouped into leaders, decision makers, influencers and champions, with LinkedIn status, event attendance, an ICP scan and a lead status per person. Contacts come in from Apollo exports or a scrape, never typed by hand." },
+        { img: "pyr-8", t: "Decision makers, scored", c: "The working surface for outreach: each decision maker carries an ICP Tracker scan with a score, LinkedIn and Sales Navigator links, connected, prospect and event flags, a lead status per person, and a Messages button." },
+        { img: "pyr-9", t: "Messages start from facts", c: "Before writing, tick what the message may use: an existing team connection, the company's FDA recalls, job signals, events, the person's role, and the published product context. Facts that don't exist for this person are greyed out with the reason." },
+        { img: "pyr-10", t: "Outreach written per person", c: "One click drafts the LinkedIn connection request and three follow-ups, each inside its character limit and anchored to the ticked facts. Edit inline, regenerate with an instruction like 'shorter' or 'open with the recall', then save and copy." },
+        { img: "pyr-11", t: "Same view, more markets", c: "The pyramid now covers Europe as well as the USA, and switches between use cases (Lab reports or BOM Extraction), so each market and product gets its own ranked account list." }
+      ] },
+    { id: "event-explorer", n: "Event Explorer", live: true, addr: "tools · event-explorer", role: "Built it (first version) · live since 8 Oct 2026",
+      d: "Which of our target companies were at earlier editions of an industry event, and who spoke there, so we know which shows are worth the trip. Every company links back to its page in the Account Pyramid.",
+      p: ["260 US events", "97 past-attendee lists researched", "747 speakers, 79 researched", "255 of our 2,059 accounts seen at events"],
+      s: "Python",
+      steps: [
+        { img: "evx-1", t: "260 events, rated for fit", c: "Every US event found by Event Radar, with a fit rating, a tier, and how many of its past attendees are already on our account list. Filter by use case, date and research status." },
+        { img: "evx-2", t: "One event: who was there last time", c: "68 past attendee companies found for this edition, 23 of them on our portal (34%), 6 speakers rated against the ICP. Each company's role, year and type, with a link to its Account Pyramid page." },
+        { img: "evx-3", t: "Flip it: one company, every event", c: "Pick a company and see every event it has been seen at, in what role and which year, and anyone from it who spoke. Sorted by most events." }
+      ] },
+    { id: "signal-engine", n: "Signal Engine", live: true, addr: "tools · signal-engine", role: "Built it · versions 1 and 2",
+      d: "A market-listening radar. Give it a pain point and it searches Reddit, news, the open web and public LinkedIn posts, has Claude score every finding for relevance and severity, and maps which industries and companies feel that pain.",
+      p: ["8 deep-dive research jobs run", "Up to 250 findings per job", "5 source types searched per job"],
+      s: "Python · Claude API",
+      steps: [
+        { img: "sig-1", t: "Research a pain point", c: "Type a pain point and press Deep Dive. It searches Reddit, news and RSS, the open web, public LinkedIn posts and our own signal corpus. Eight jobs so far, up to 250 findings each." },
+        { img: "sig-2", t: "The job's report", c: "For 'tribal knowledge loss': 132 of 250 articles selected for AI Intime, average relevance 7.96 and severity 7.77 out of 10, the search queries, related vocabulary, and a source split (news 26, blogs 61, LinkedIn 19, Reddit 14)." },
+        { img: "sig-3", t: "Every finding, scored and tagged", c: "Each article carries a relevance and severity score, a first-person flag, an industry, a summary, why it matters, the extracted pains and the exact phrases people used. Export the report as Markdown or PDF." }
+      ] },
+    { id: "decision-engine", n: "Decision Engine", live: true, addr: "tools · decision-engine", role: "Built it end to end · live since 9 Sep 2026",
+      d: "Type a company and pick a product lens (AI Intime or Vegam SFS). It reads about 100 public sources and returns a fit decision where every claim carries its evidence, source and confidence, then turns the research into a buying committee, a meeting brief and outreach drafts. The walkthrough below is one real account, researched through the Vegam SFS lens.",
+      p: ["Intent score 82 out of 100, with an ICP gate and the full scoring breakdown", "On this example: 100 sources, 12 pages read, 25 claims, 10 committee seats, 9 signals", "Every claim graded CONFIRMED, LIKELY or REPORTED, with its source", "Conflicting facts flagged, official filings preferred over aggregators"],
+      s: "Python · FastAPI",
+      steps: [
+        { img: "de-1", t: "Choose a lens, name a company", c: "AI Intime or Vegam SFS lens, then a company name and domain. Researched accounts are saved and can be reopened at no cost." },
+        { img: "de-2", t: "Company snapshot", c: "One screen: a strong-intent verdict, buying intent 82 out of 100 with its scoring breakdown, the ICP gate with reasons, and the evidence counts. 100 sources, 12 pages read, 25 claims, 10 committee seats, 9 signals." },
+        { img: "de-3", t: "Organization", c: "Every leader found in the evidence, from the C-suite down, each with a confidence grade (CONFIRMED, LIKELY or REPORTED), the exact source, and a one-click web search to verify or update it." },
+        { img: "de-4", t: "Business processes", c: "The reasoning spine: Process to Capability to Problem to Responsibility to Role to Person. Chain confidence equals the weakest evidence-bearing link, so it is visible exactly where the argument is thin." },
+        { img: "de-5", t: "Responsibilities", c: "Who owns each problem the product solves. Where no name is public the tool keeps an explicit persona rather than guessing, and the next step becomes finding the person." },
+        { img: "de-6", t: "Buying committee", c: "Each seat typed as economic buyer, champion or technical buyer, with why they matter, the evidence behind the seat, and a concrete recommended next action per person." },
+        { img: "de-7", t: "Stakeholders", c: "Every named person in the evidence with role, department, seniority, confidence and source. Names that only appear on aggregator sites are capped at REPORTED." },
+        { img: "de-8", t: "Signals", c: "Buying triggers with strength and source: a new executive appointment, a plant expansion, an acquisition, a live digital-transformation programme. Strong signals drive the intent score and the outreach anchors." },
+        { img: "de-9", t: "Technologies", c: "The systems detected in the evidence, from the ERP to the MES to the analytics stack, each confirmed from job postings, vendor case studies or the company's own pages. The landscape the product must sit on top of." },
+        { img: "de-10", t: "Timeline", c: "Dated events from the evidence, from the company's founding to last month's announcements, each with its source." },
+        { img: "de-11", t: "Meeting brief", c: "Pre-call preparation written for the rep: why the account fits, the live why-now triggers, the committee entry strategy, and how to position against what is already installed." },
+        { img: "de-12", t: "Outreach", c: "Persona-specific LinkedIn notes and emails, each anchored to the signal most relevant to that buyer, generated from the committee and the collected evidence." },
+        { img: "de-13", t: "Evidence", c: "The full audit trail: 25 claims with confidence and conflicts, every source tagged by type, and the pages the engine actually read. Here it flags a headcount conflict and prefers the official filing over an aggregator." }
+      ] },
+    { id: "data-cleaner", n: "Data Cleaner", live: true, addr: "tools · data-cleaner", role: "Built it",
+      d: "Data Flow Pro: a 9-step pipeline that turns a raw Apollo export into a clean, CRM-ready list. Apollo import, Prospeo enrichment, list split, ZeroBounce email checks, clean-up, CRM field mapping and export.",
+      p: ["9 guided steps, one screen", "Master data is never modified", "Only verified emails reach the CRM"],
+      s: "JavaScript",
+      steps: [
+        { img: "dc-1", t: "Nine steps, one screen", c: "Apollo import, Prospeo enrichment, analyse and split, email verification, upload verified, combine and clean, CRM mapping, final export, upload to CRM. Each step unlocks the next." },
+        { img: "dc-2", t: "Drop an Apollo export", c: "Shown here with a 7-row dummy file. The pipeline keeps the 12 columns the CRM needs and drops the rest. The master data is never modified." },
+        { img: "dc-3", t: "Column detection and preview", c: "12 columns kept, 7 removed, a preview of the master data and a confirmation. Next: enrich the contacts via Prospeo, or skip to a manual upload." }
+      ] },
+    { id: "event-radar", n: "Event Radar", live: true, addr: "tools · event-radar", role: "My first build · March 2026",
+      d: "Finds upcoming in-person events by city or US time zone and checks each one against our ideal customer profile. It's where my tool-building started; the newer Event Explorer builds on the 260 events it found.",
+      p: ["Live on the internal tools portal", "Its 260 US events feed Event Explorer"],
+      s: "JavaScript · React · Claude web search",
+      steps: [
+        { img: "rad-1", t: "The front door", c: "Event Radar finds upcoming in-person events where our buyers will be, anywhere in the US. Launch Tracker opens the search." },
+        { img: "rad-2", t: "Search, track, export", c: "Search a city with a radius, or sweep whole US time zones. Pick industries, tick AI Intime Focused for an ICP check on every event, choose the search depth and a date range. Each depth shows its cost per job and the budget left for the month. Events you track land in Tracked, Calendar and Results, and export to CSV. Today's version (v2, extended by a teammate) added the time zones, depth control and budget guard." }
+      ] },
+    { id: "lead-research", n: "Lead Research v2", live: false, addr: "tools · lead-research (sign-in)", role: "Co-authored v1 · built v2 · live since 20 Aug 2026",
+      d: "Paste a prospect's LinkedIn URL and get a 14-section meeting-prep report: who they are, what changed at their company, why now, what to say and what not to say. Sign-in protected; the reports contain real prospect data and stay private.",
+      p: ["Benchmark score 5 → 13 out of 15 vs human-assisted research", "Apollo → ZeroBounce → Prospeo email waterfall", "Projected cost per report cut from ~$3.00 to $1.00–1.40", "Also packaged as a Claude Code plugin"],
+      s: "Next.js · Claude API",
+      steps: [
+        { img: "lr-1", t: "Sign in", c: "Each report is about a real person, so the tool sits behind a login and I don't show its output here. The numbers on the right are from its benchmark against human-assisted research." }
+      ] }
+  ];
+  var tl = document.getElementById("toollist");
+  if (tl) {
+    var img = document.getElementById("toolimg"), lb = document.getElementById("lightbox"), lbi = document.getElementById("lightimg"),
+        dots = document.getElementById("stepdots"), playBtn = document.getElementById("stepplay"),
+        prevBtn = document.getElementById("stepprev"), nextBtn = document.getElementById("stepnext"), cur = 0, step = 0, timer = null;
+    function stopPlay() { if (timer) { clearInterval(timer); timer = null; } playBtn.textContent = "▶ Play"; playBtn.classList.remove("playing"); }
+    function showStep(k) {
+      var t = TOOLS[cur], s = t.steps[k]; step = k;
+      img.src = "showcase/" + s.img + ".jpg?v=3"; img.alt = t.n + ", step " + (k + 1) + ": " + s.t;
+      document.getElementById("steptitle").textContent = (k + 1) + ". " + s.t;
+      document.getElementById("stepcap").textContent = s.c;
+      document.getElementById("stepcount").textContent = "STEP " + (k + 1) + " OF " + t.steps.length;
+      [].forEach.call(dots.children, function (b, j) { if (j === k) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+      prevBtn.disabled = k === 0; nextBtn.disabled = k === t.steps.length - 1;
+    }
+    function show(i) {
+      stopPlay(); cur = i; var t = TOOLS[i];
+      [].forEach.call(tl.children, function (b, j) { b.setAttribute("aria-selected", j === i ? "true" : "false"); b.tabIndex = j === i ? 0 : -1; });
+      document.getElementById("tooladdr").textContent = t.addr;
+      document.getElementById("toolname").textContent = t.n;
+      document.getElementById("toolrole").textContent = t.role;
+      document.getElementById("tooldesc").textContent = t.d;
+      document.getElementById("toolstack").textContent = t.s;
+      document.getElementById("toolproof").innerHTML = t.p.map(function (x) { return "<li>" + x + "</li>"; }).join("");
+      dots.innerHTML = "";
+      t.steps.forEach(function (s, k) {
+        var b = document.createElement("button"); b.type = "button"; b.textContent = k + 1;
+        b.setAttribute("aria-label", "Step " + (k + 1) + ": " + s.t);
+        b.addEventListener("click", function () { stopPlay(); showStep(k); });
+        dots.appendChild(b);
+        var pre = new Image(); pre.src = "showcase/" + s.img + ".jpg?v=3";
+      });
+      playBtn.style.display = t.steps.length > 1 ? "" : "none";
+      showStep(0);
+    }
+    prevBtn.addEventListener("click", function () { stopPlay(); if (step > 0) showStep(step - 1); });
+    nextBtn.addEventListener("click", function () { stopPlay(); if (step < TOOLS[cur].steps.length - 1) showStep(step + 1); });
+    playBtn.addEventListener("click", function () {
+      if (timer) { stopPlay(); return; }
+      if (step >= TOOLS[cur].steps.length - 1) showStep(0);
+      playBtn.textContent = "❚❚ Pause"; playBtn.classList.add("playing");
+      timer = setInterval(function () { if (step < TOOLS[cur].steps.length - 1) showStep(step + 1); else stopPlay(); }, 4500);
+    });
+    document.querySelector(".window").addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" && step < TOOLS[cur].steps.length - 1) { stopPlay(); showStep(step + 1); }
+      if (e.key === "ArrowLeft" && step > 0) { stopPlay(); showStep(step - 1); }
+    });
+    TOOLS.forEach(function (t, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab"); b.id = "tab-" + t.id;
+      b.innerHTML = '<span class="dot' + (t.live ? "" : " lock") + '" aria-hidden="true"></span>' + t.n;
+      b.addEventListener("click", function () { show(i); });
+      b.addEventListener("keydown", function (e) {
+        var k = e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : e.key === "ArrowUp" || e.key === "ArrowLeft" ? -1 : 0;
+        if (k) { e.preventDefault(); var n = (i + k + TOOLS.length) % TOOLS.length; show(n); tl.children[n].focus(); }
+      });
+      tl.appendChild(b);
+    });
+    show(0);
+    document.getElementById("toolshot").addEventListener("click", function () { lbi.src = img.src; lbi.alt = img.alt; lb.classList.add("open"); });
+    lb.addEventListener("click", function () { lb.classList.remove("open"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.classList.remove("open"); });
+  }
+  var g = document.getElementById("guilty"), co = document.getElementById("caseOpen");
+  if (g) g.addEventListener("click", function () { toast("🔨 Objection overruled. Side quest #13 has already started."); });
+  if (co) co.addEventListener("click", function () { burst(24); toast("🕵️ New lead on the case: <a href=\"mailto:revathyradhakrishnan2412@gmail.com\" style=\"color:var(--sun)\">email the investigator</a>"); });
+  /* blueprint */
+  var BP = [
+    { i: "\ud83d\udce1", n: "Sense", s: "hear the signal", tools: ["Job Signal Engine", "Signal Engine", "Event Radar", "Event Explorer"],
+      t: "Companies announce their problems constantly: in job postings, public pain talk, recalls and event line-ups. The sensing tools watch those sources on a schedule, so the first touch can land before the RFP exists.",
+      o: "A Signal Card: company, signal type, evidence with a quote and source, strength, date." },
+    { i: "\u2696\ufe0f", n: "Qualify", s: "score the fit", tools: ["Decision Engine", "Account Pyramid"],
+      t: "Every signal is judged against the ideal customer profile with evidence, not vibes. The Decision Engine grades each claim and scores intent; the Account Pyramid files the company by size, industry and use case.",
+      o: "A tiered account with an intent score, an ICP verdict and every claim sourced." },
+    { i: "\u2709\ufe0f", n: "Reach", s: "first touch", tools: ["Data Cleaner", "Account Pyramid", "Job Signal Engine"],
+      t: "Contacts come in from exports, get verified through the enrichment waterfall, and the first message is written from ticked facts: a real signal, the person's real role, the published product context. No spray, no pray.",
+      o: "A verified contact and a personalised first touch, logged per person." },
+    { i: "\ud83d\udcac", n: "Engage", s: "keep the thread", tools: ["Account Pyramid", "n8n workflows"],
+      t: "Replies, LinkedIn engagement and site visits raise the account's heat score. n8n routes the follow-ups and keeps every touch on the company's row, so nobody double-messages the same buyer.",
+      o: "A warming account with its whole history in one place." },
+    { i: "\ud83d\udcc5", n: "Meet", s: "walk in prepared", tools: ["Lead Research v2", "Decision Engine"],
+      t: "Before the call, Lead Research turns the account into a 14-section meeting prep: who they are, what changed, why now, what to say and what not to say. It scored 13 out of 15 against human-assisted research.",
+      o: "A rep who opens with their problem, not our pitch." },
+    { i: "\ud83d\udd01", n: "Win & learn", s: "close the loop", tools: ["Twenty CRM ops", "GA4 funnel events"],
+      t: "Outcomes go back into the CRM, won and lost deals re-weight which signals to trust, and GA4 funnel events tie the website to pipeline, so the machine aims better every quarter.",
+      o: "A sharper machine next quarter." }
+  ];
+  var bpRail = document.getElementById("bpRail");
+  if (bpRail) {
+    var CARD_TOOLS = ["Job Signal Engine", "Account Pyramid", "Event Explorer", "Lead Research v2", "Decision Engine", "Signal Engine", "Event Radar", "Data Cleaner"];
+    function bpShow(k) {
+      [].forEach.call(bpRail.children, function (b, j) { b.setAttribute("aria-selected", j === k ? "true" : "false"); });
+      var st = BP[k];
+      document.getElementById("bpTitle").textContent = st.i + " " + (k + 1) + ". " + st.n;
+      document.getElementById("bpText").textContent = st.t;
+      document.getElementById("bpOut").textContent = st.o;
+      var tl = document.getElementById("bpTools"); tl.innerHTML = "";
+      st.tools.forEach(function (name) {
+        var el = document.createElement(CARD_TOOLS.indexOf(name) >= 0 ? "a" : "span");
+        el.className = "chip"; el.textContent = name;
+        if (el.tagName === "A") { el.href = "#cards"; el.title = "See the trading card"; el.style.textDecoration = "none"; }
+        tl.appendChild(el);
+      });
+    }
+    BP.forEach(function (st, k) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "bp-stage"; b.setAttribute("role", "tab");
+      b.innerHTML = '<span class="bp-num">' + (k + 1) + '</span><span class="bp-ico">' + st.i + '</span><b>' + st.n + '</b><small>' + st.s + '</small>';
+      b.addEventListener("click", function () { bpShow(k); });
+      bpRail.appendChild(b);
+    });
+    bpShow(0);
+  }
+
+  /* quiz: which tool are you? */
+  var QUIZ = [
+    { q: "Monday, 9:02 am. You open\u2026", o: [
+      ["Job boards. Someone hiring = someone hurting.", "Job Signal Engine"],
+      ["The news. What changed overnight?", "Signal Engine"],
+      ["The CRM. The chaos must be sorted.", "Data Cleaner"],
+      ["The calendar. Who are we meeting, and what do we know?", "Lead Research v2"]] },
+    { q: "Your friends describe you as\u2026", o: [
+      ["The one who knows everyone's plans before they do", "Event Explorer"],
+      ["The organiser. Everything in tiers.", "Account Pyramid"],
+      ["The judge. Fair, but you WILL be scored.", "Decision Engine"],
+      ["The radar. Nothing gets past you.", "Event Radar"]] },
+    { q: "At a party, you are\u2026", o: [
+      ["Quietly mapping who knows who", "Event Explorer"],
+      ["In one deep conversation in the kitchen", "Lead Research v2"],
+      ["Deciding within 30 seconds whether this party is a fit", "Decision Engine"],
+      ["Collecting the empty cups. Someone has to.", "Data Cleaner"]] },
+    { q: "Pick a superpower:", o: [
+      ["Seeing a need two weeks before the RFP", "Job Signal Engine"],
+      ["Hearing every conversation about your topic at once", "Signal Engine"],
+      ["Perfect memory of who attended what, ever", "Event Explorer"],
+      ["Instantly sorting anything by size and importance", "Account Pyramid"]] },
+    { q: "Your motto:", o: [
+      ["Evidence, or it didn't happen.", "Decision Engine"],
+      ["Timing beats talent.", "Event Radar"],
+      ["Clean list, clean conscience.", "Data Cleaner"],
+      ["Know before you go.", "Lead Research v2"]] }
+  ];
+  var quizBox = document.getElementById("quizBox");
+  if (quizBox) {
+    var qScores = {}, qi = 0;
+    function quizStart() { qScores = {}; qi = 0; quizQ(); }
+    function quizQ() {
+      var html = '<div class="quiz-prog">';
+      for (var d = 0; d < QUIZ.length; d++) html += '<i class="' + (d <= qi ? "on" : "") + '"></i>';
+      html += '</div><div class="quiz-q">' + (qi + 1) + ". " + QUIZ[qi].q + '</div><div class="quiz-opts"></div>';
+      quizBox.innerHTML = html;
+      var wrap = quizBox.querySelector(".quiz-opts");
+      QUIZ[qi].o.forEach(function (opt) {
+        var b = document.createElement("button"); b.type = "button"; b.textContent = opt[0];
+        b.addEventListener("click", function () {
+          qScores[opt[1]] = (qScores[opt[1]] || 0) + 1;
+          qi++; if (qi < QUIZ.length) quizQ(); else quizDone();
+        });
+        wrap.appendChild(b);
+      });
+    }
+    function quizDone() {
+      var win = null, best = -1;
+      cards.forEach(function (cd) { var s = qScores[cd.n] || 0; if (s > best) { best = s; win = cd; } });
+      quizBox.innerHTML = '<div class="quiz-res">' +
+        '<div class="big">' + win.ico + '</div>' +
+        '<h3>You are the ' + win.n + '</h3>' +
+        '<div class="cls">Class: ' + win.cls + ' \u00b7 you scored ' + best + ' of 5 answers in its favour</div>' +
+        '<p>' + win.pw + '</p>' +
+        '<div class="weak2">' + win.wk + '</div>' +
+        '<div class="quiz-actions"><button type="button" class="btn primary" id="quizCopy">Copy my result</button>' +
+        '<button type="button" class="btn" id="quizAgain">Retake</button></div></div>';
+      document.getElementById("quizAgain").addEventListener("click", quizStart);
+      document.getElementById("quizCopy").addEventListener("click", function () {
+        var txt = "I took Revathy's GTM-tool personality quiz and I'm the " + win.n + " " + win.ico + " (class: " + win.cls + ").";
+        if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { toast("\ud83d\udccb Copied. Paste it anywhere."); }, function () { toast(txt); });
+        else toast(txt);
+      });
+      burst(70);
+      document.dispatchEvent(new CustomEvent("rr-react", { detail: { text: "The " + win.n + "?! Of course you are. Excellent taste.", outfit: "party", wave: true } }));
+    }
+    quizStart();
+  }
+
+  /* mini-Revathy reacts to a resume download */
+  var resumeBtn = document.querySelector("a[download]");
+  if (resumeBtn) resumeBtn.addEventListener("click", function () {
+    burst(40);
+    document.dispatchEvent(new CustomEvent("rr-react", { detail: { text: "Good pick! Handcrafted by me and one very polite robot.", wave: true } }));
+  });
+
+  var clicks = 0, ct;
+  document.getElementById("logo").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    clicks++; clearTimeout(ct); ct = setTimeout(function () { clicks = 0; }, 1500);
+    if (clicks === 5) { clicks = 0; burst(30); toast("🏆 Achievement unlocked: Curious Recruiter. You clicked the logo 5 times."); }
+  });
+})();
+</script>
+
+<script src="three.min.js"></script>
+<script>
+(function () {
+"use strict";
+function giveUp(err) {
+  if (err) console.error("Mini-Revathy could not start:", err);
+  document.body.classList.add("no-webgl");
+  var m = document.getElementById("mascot"); if (m) m.remove();
+  var b = document.getElementById("bubble"); if (b) b.remove();
+}
+try {
+if (typeof THREE === "undefined") throw new Error("three.min.js did not load");
+if (THREE.ColorManagement) THREE.ColorManagement.legacyMode = false; // match modern three.js colour handling
+/* Mini-Revathy: a dithered 3D mascot built from primitives (no model file).
+   Follows the page, changes outfit per section, can be poked, dragged, punched, and naps when ignored. */
+
+const wrap = document.getElementById("mascot");
+const stage = document.getElementById("stage");
+const bubble = document.getElementById("bubble");
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const PX = 2; // CSS pixels per rendered pixel: the chunky dither look
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true, powerPreference: "low-power" });
+} catch (err) {
+  throw err;
+}
+renderer.setPixelRatio(1);
+renderer.physicallyCorrectLights = true;
+renderer.setClearColor(0x000000, 0);
+const canvas = renderer.domElement;
+wrap.appendChild(canvas);
+
+/* ---------- scene ---------- */
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
+camera.position.set(0, 1.62, 7.4);
+camera.lookAt(0, 1.47, 0);
+scene.add(new THREE.HemisphereLight(0xfff1dc, 0x4a3527, 1.3));
+const sun = new THREE.DirectionalLight(0xffffff, 1.9);
+sun.position.set(3, 5, 6);
+scene.add(sun);
+
+const grad = (() => {
+  const t = new THREE.DataTexture(new Uint8Array([70, 165, 255]), 3, 1, THREE.RedFormat);
+  t.minFilter = t.magFilter = THREE.NearestFilter; t.needsUpdate = true; return t;
+})();
+const M = (color, o) => new THREE.MeshToonMaterial(Object.assign({ color, gradientMap: grad }, o || {}));
+const B = (color, o) => new THREE.MeshBasicMaterial(Object.assign({ color }, o || {}));
+const sph = (r, w, h) => new THREE.SphereGeometry(r, w || 20, h || 14);
+const cyl = (a, b, h, s) => new THREE.CylinderGeometry(a, b, h, s || 16);
+function add(parent, geo, mat, x, y, z, sx, sy, sz) {
+  const m = new THREE.Mesh(geo, mat);
+  m.position.set(x || 0, y || 0, z || 0);
+  m.scale.set(sx || 1, sy || 1, sz || 1);
+  parent.add(m); return m;
+}
+
+const C = { skin: 0x8a5a3c, skinD: 0x6e4630, hair: 0x1b1411, jeans: 0x2c3b66, shoe: 0xf1ece2, gold: 0xd9a441, mouth: 0x5a1a1a, blush: 0xff8a7a };
+const dotTex = (() => {
+  const c = document.createElement("canvas"); c.width = c.height = 64;
+  const g = c.getContext("2d");
+  g.fillStyle = "#c81e2c"; g.fillRect(0, 0, 64, 64); g.fillStyle = "#ffffff";
+  [[16, 16], [48, 48]].forEach(function (p) { g.beginPath(); g.arc(p[0], p[1], 6, 0, Math.PI * 2); g.fill(); });
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(4, 3); t.encoding = THREE.sRGBEncoding;
+  return t;
+})();
+const topMat = M(0xffffff, { map: dotTex });
+const skin = M(C.skin), hairM = M(C.hair), jeans = M(C.jeans), shoeM = M(C.shoe), gold = M(C.gold);
+
+/* ---------- the character ---------- */
+const root = new THREE.Group(); scene.add(root);
+const shadow = add(root, new THREE.CircleGeometry(0.75, 24), B(0x000000, { transparent: true, opacity: 0.22, depthWrite: false }));
+shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.002;
+const body = new THREE.Group(); root.add(body);            // hops
+const hang = new THREE.Group(); hang.position.y = 2.1; body.add(hang);   // dangles from the head when dragged
+const fig = new THREE.Group(); fig.position.y = -2.1; hang.add(fig);     // spins on outfit change
+const sq = new THREE.Group(); fig.add(sq);                 // squash and stretch from the feet
+
+const legs = [-1, 1].map(function (s) {
+  const g = new THREE.Group(); g.position.set(s * 0.2, 0.58, 0); sq.add(g);
+  add(g, cyl(0.13, 0.12, 0.5), jeans, 0, -0.25, 0);
+  add(g, sph(0.15), shoeM, 0, -0.5, 0.06, 1, 0.6, 1.35);
+  return g;
+});
+add(sq, sph(0.6, 28, 20), topMat, 0, 0.98, 0, 0.92, 1.08, 0.85);        // polka-dot top
+add(sq, cyl(0.14, 0.16, 0.22), skin, 0, 1.62, 0);                        // neck
+const necklace = add(sq, new THREE.TorusGeometry(0.19, 0.02, 6, 24), gold, 0, 1.56, 0.04);
+necklace.rotation.x = Math.PI / 2 - 0.25;
+
+const arms = [-1, 1].map(function (s) {
+  const g = new THREE.Group(); g.position.set(s * 0.56, 1.36, 0); sq.add(g);
+  add(g, sph(0.2), topMat);
+  add(g, cyl(0.085, 0.08, 0.5), skin, 0, -0.32, 0);
+  const hand = new THREE.Group(); hand.position.y = -0.6; g.add(hand);
+  g.userData = { hand: hand, handMesh: add(hand, sph(0.11), skin) };
+  g.rotation.z = s * 0.18;
+  return g;
+});
+const armR = arms[0], armL = arms[1]; // armR is on the viewer's left
+
+const neck = new THREE.Group(); neck.position.y = 1.68; sq.add(neck);
+const head = new THREE.Group(); head.position.y = 0.42; neck.add(head);
+add(head, sph(0.6, 32, 24), skin, 0, 0, 0, 1, 1.02, 0.96);
+const eyes = new THREE.Group(); head.add(eyes);
+[-1, 1].forEach(function (s) {
+  add(eyes, sph(0.075, 12, 10), M(0x111111), s * 0.21, 0.03, 0.55, 0.85, 1.15, 0.5);
+  add(eyes, sph(0.024, 8, 6), B(0xffffff), s * 0.21 + 0.028, 0.08, 0.6);
+  add(head, new THREE.BoxGeometry(0.17, 0.03, 0.03), hairM, s * 0.21, 0.2, 0.555).rotation.z = -s * 0.12;
+  add(head, new THREE.CircleGeometry(0.075, 14), B(C.blush, { transparent: true, opacity: 0.6 }), s * 0.33, -0.1, 0.5).rotation.y = s * 0.5;
+});
+add(head, sph(0.055), M(C.skinD), 0, -0.08, 0.58);
+const smile = add(head, new THREE.TorusGeometry(0.12, 0.024, 6, 16, Math.PI), M(C.mouth), 0, -0.16, 0.53);
+smile.rotation.z = Math.PI;
+const mouthO = add(head, sph(0.065), M(C.mouth), 0, -0.22, 0.52, 1, 1.2, 0.5);
+mouthO.visible = false;
+
+// hair: centre-parted, pulled back, low ponytail over the shoulder
+const cap = add(head, new THREE.SphereGeometry(0.635, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.52), hairM, 0, 0.03, -0.02);
+cap.rotation.x = -0.5;
+add(head, sph(0.6, 24, 16), hairM, 0, -0.08, -0.16, 1.04, 1, 0.9);
+const parting = new THREE.Group(); parting.position.y = 0.03; parting.rotation.x = -0.54; head.add(parting);
+add(parting, new THREE.TorusGeometry(0.645, 0.016, 4, 18, 0.95), M(C.skinD)).rotation.y = -Math.PI / 2;
+[-1, 1].forEach(function (s) { add(head, cyl(0.05, 0.03, 0.42, 8), hairM, s * 0.5, -0.2, 0.27).rotation.z = s * 0.18; });
+const pony = new THREE.Group(); pony.position.set(0.22, -0.32, -0.5); head.add(pony);
+add(pony, new THREE.TorusGeometry(0.1, 0.035, 6, 14), M(0xc81e2c), 0, 0.02, 0).rotation.x = Math.PI / 2;
+[[0, -0.02, 0, 0.15], [0.13, -0.2, 0.2, 0.15], [0.22, -0.42, 0.45, 0.13], [0.27, -0.64, 0.66, 0.11], [0.27, -0.82, 0.78, 0.085]]
+  .forEach(function (p) { add(pony, sph(p[3], 14, 10), hairM, p[0], p[1], p[2]); });
+
+/* ---------- outfits ---------- */
+const OUT = {};
+function part(outfit, parent) { const g = new THREE.Group(); g.visible = false; parent.add(g); (OUT[outfit] = OUT[outfit] || []).push(g); return g; }
+OUT.none = [];
+{ // detective: hat + magnifying glass
+  const hat = part("detective", head); hat.position.set(0, 0.5, -0.05); hat.rotation.set(-0.15, 0, 0.12);
+  const brown = M(0x7a5230), dark = M(0x3b2718);
+  add(hat, cyl(0.8, 0.8, 0.05, 28), brown); add(hat, cyl(0.46, 0.52, 0.36, 24), brown, 0, 0.2, 0); add(hat, cyl(0.525, 0.53, 0.09, 24), dark, 0, 0.06, 0);
+  const mag = part("detective", armL.userData.hand);
+  add(mag, cyl(0.035, 0.035, 0.3, 8), dark, 0, -0.15, 0);
+  add(mag, new THREE.TorusGeometry(0.16, 0.03, 8, 20), gold, 0, -0.45, 0);
+  add(mag, new THREE.CircleGeometry(0.15, 20), B(0xbfe6ff, { transparent: true, opacity: 0.55 }), 0, -0.45, 0.005);
+}
+{ // accountant: green visor + round glasses
+  const g = part("accountant", head), green = M(0x2f9e6e, { side: THREE.DoubleSide });
+  add(g, new THREE.TorusGeometry(0.6, 0.035, 6, 28), green, 0, 0.3, 0).rotation.x = Math.PI / 2;
+  add(g, new THREE.CircleGeometry(0.42, 18, 0, Math.PI), green, 0, 0.3, 0.5).rotation.x = Math.PI / 2 - 0.25;
+  [-1, 1].forEach(function (s) { add(g, new THREE.TorusGeometry(0.12, 0.018, 6, 18), M(0x111111), s * 0.21, 0.03, 0.6); });
+  add(g, new THREE.BoxGeometry(0.12, 0.02, 0.02), M(0x111111), 0, 0.05, 0.6);
+}
+{ // hard hat + wrench
+  const g = part("hardhat", head), yellow = M(0xffc93c);
+  add(g, new THREE.SphereGeometry(0.67, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2), yellow, 0, 0.12, 0).rotation.x = -0.15;
+  add(g, cyl(0.82, 0.82, 0.04, 28), yellow, 0, 0.13, 0.05).rotation.x = -0.15;
+  add(g, new THREE.BoxGeometry(0.1, 0.08, 0.9), yellow, 0, 0.76, -0.02).rotation.x = -0.15;
+  const w = part("hardhat", armL.userData.hand), steel = M(0x9aa3ad);
+  add(w, new THREE.BoxGeometry(0.07, 0.4, 0.05), steel, 0, -0.2, 0);
+  add(w, new THREE.TorusGeometry(0.09, 0.035, 6, 12, Math.PI * 1.5), steel, 0, -0.45, 0);
+}
+{ // gamer headset
+  const g = part("headset", head), black = M(0x222222), lil = M(0x7c6cf0);
+  add(g, new THREE.TorusGeometry(0.66, 0.045, 8, 28, Math.PI), black, 0, 0.02, 0);
+  [-1, 1].forEach(function (s) { add(g, cyl(0.17, 0.17, 0.12, 18), lil, s * 0.64, 0, 0).rotation.z = Math.PI / 2; });
+  add(g, cyl(0.02, 0.02, 0.42, 6), black, -0.55, -0.2, 0.28).rotation.set(Math.PI / 2 - 0.4, 0, 0.6);
+  add(g, sph(0.05), black, -0.42, -0.27, 0.47);
+}
+{ // shades
+  const g = part("shades", head), black = M(0x111111);
+  [-1, 1].forEach(function (s) { add(g, new THREE.BoxGeometry(0.26, 0.14, 0.04), black, s * 0.21, 0.04, 0.6); });
+  add(g, new THREE.BoxGeometry(0.14, 0.03, 0.03), black, 0, 0.07, 0.6);
+}
+{ // dev beanie
+  const g = part("beanie", head), purple = M(0x7c6cf0);
+  add(g, new THREE.SphereGeometry(0.66, 24, 12, 0, Math.PI * 2, 0, Math.PI * 0.5), purple, 0, 0.1, -0.02).rotation.x = -0.25;
+  add(g, new THREE.TorusGeometry(0.6, 0.08, 8, 28), M(0x5b4bd6), 0, 0.16, 0.02).rotation.x = Math.PI / 2 - 0.25;
+  add(g, sph(0.13), M(0xffffff), 0, 0.8, -0.12);
+}
+{ // explorer hat
+  const g = part("explorer", head), tan = M(0xc8a165);
+  add(g, cyl(0.9, 0.9, 0.04, 28), tan, 0, 0.42, 0).rotation.x = -0.1;
+  add(g, new THREE.SphereGeometry(0.5, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2), tan, 0, 0.43, 0, 1, 0.75, 1).rotation.x = -0.1;
+  add(g, cyl(0.5, 0.5, 0.07, 24), M(0x6b4a2b), 0, 0.47, 0).rotation.x = -0.1;
+}
+{ // boxing gloves
+  [armL, armR].forEach(function (a) { add(part("gloves", a.userData.hand), sph(0.21), M(0xe0303a), 0, -0.04, 0); });
+}
+{ // party hat
+  const g = part("party", head);
+  const hat = add(g, new THREE.ConeGeometry(0.4, 0.82, 18), M(0xff5a36), 0.06, 0.86, 0);
+  hat.rotation.z = -0.15;
+  add(g, new THREE.TorusGeometry(0.41, 0.045, 8, 22), M(0x7c6cf0), 0.11, 0.5, 0).rotation.x = Math.PI / 2 - 0.08;
+  add(g, sph(0.1), M(0xffc93c), 0.17, 1.3, 0);
+}
+// arm poses per outfit: [rotation.x, rotation.z]
+const POSE = {
+  none: { L: [0, 0.18], R: [0, -0.18] }, detective: { L: [0, 2.3], R: [0, -0.18] },
+  accountant: { L: [-0.6, 0.35], R: [0, -0.18] }, hardhat: { L: [0, 0.95], R: [0, -0.18] },
+  headset: { L: [0, 0.18], R: [0, -0.18] }, shades: { L: [0, 0.18], R: [-0.3, -0.9] },
+  beanie: { L: [0, 0.18], R: [0, -0.18] }, explorer: { L: [0, 0.18], R: [-1.7, -0.5] },
+  gloves: { L: [-1.25, 0.35], R: [-1.25, -0.35] },
+  party: { L: [-2.5, 0.5], R: [-2.5, -0.5] }
+};
+let outfit = "none", pendingOutfit = null, spin = 0;
+function applyOutfit(name) {
+  Object.keys(OUT).forEach(function (k) { OUT[k].forEach(function (g) { g.visible = k === name; }); });
+  armL.userData.handMesh.visible = armR.userData.handMesh.visible = name !== "gloves";
+  outfit = name;
+}
+function setOutfit(name) {
+  if (name === outfit && !pendingOutfit) return;
+  if (reduce) { applyOutfit(name); return; }
+  pendingOutfit = name; spin = 0.0001;
+}
+
+/* ---------- dither post-process ---------- */
+const rt = new THREE.WebGLRenderTarget(2, 2, { type: THREE.HalfFloatType, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter });
+const postScene = new THREE.Scene(), postCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+postScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
+  uniforms: { tDiffuse: { value: rt.texture } },
+  vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
+  fragmentShader: [
+    "uniform sampler2D tDiffuse; varying vec2 vUv;",
+    "float b2(vec2 a){ a = floor(a); return fract(dot(a, vec2(0.5, a.y * 0.75))); }",
+    "float b4(vec2 a){ return b2(0.5 * a) * 0.25 + b2(a); }",
+    "void main(){",
+    "  vec4 c = texture2D(tDiffuse, vUv);",
+    "  float d = b4(gl_FragCoord.xy);",
+    "  if (c.a < d * 0.96 + 0.02) discard;",
+    "  vec3 s = pow(max(c.rgb, 0.0), vec3(1.0 / 2.2));",
+    "  float L = 5.0;",
+    "  gl_FragColor = vec4(clamp(floor(s * (L - 1.0) + d) / (L - 1.0), 0.0, 1.0), 1.0);",
+    "}"
+  ].join("\n"),
+  depthTest: false, depthWrite: false
+})));
+
+/* ---------- speech bubble + hearts ---------- */
+let sayTimer;
+function say(text, ms) {
+  bubble.textContent = text; bubble.classList.add("show");
+  clearTimeout(sayTimer); sayTimer = setTimeout(function () { bubble.classList.remove("show"); }, ms || 3400);
+}
+function heart(x, y, ch) {
+  const s = document.createElement("span"); s.className = "heart"; s.textContent = ch || "💖";
+  s.style.left = x + "px"; s.style.top = y + "px"; document.body.appendChild(s);
+  setTimeout(function () { s.remove(); }, 1200);
+}
+function placeBubble() {
+  if (!bubble.classList.contains("show")) return;
+  const r = wrap.getBoundingClientRect(), bw = bubble.offsetWidth;
+  const x = Math.max(8, Math.min(innerWidth - bw - 8, r.left + r.width / 2 - bw / 2));
+  bubble.style.left = x + "px";
+  bubble.style.top = Math.max(76, r.top + r.height * 0.05) + "px";
+}
+
+/* ---------- where she lives on the page ---------- */
+let mode = "hero", glideUntil = 0, dragging = false;
+const free = { x: 0, y: 0, w: 0, h: 0, scrollAt: 0 };
+function dockSize() { return innerWidth < 620 ? [84, 108] : [170, 212]; }
+function setBox(x, y, w, h) { const st = wrap.style; st.left = x + "px"; st.top = y + "px"; st.width = w + "px"; st.height = h + "px"; }
+function glide() { if (reduce) return; wrap.classList.add("glide"); glideUntil = performance.now() + 650; }
+function layout() {
+  const r = stage.getBoundingClientRect();
+  const heroVisible = r.bottom > innerHeight * 0.45 && r.top < innerHeight * 0.7;
+  let next;
+  if (dragging) next = "free";
+  else if (mode === "free") next = Math.abs(scrollY - free.scrollAt) > 160 ? (heroVisible ? "hero" : "dock") : "free";
+  else next = heroVisible ? "hero" : "dock";
+  if (next !== mode) { mode = next; glide(); }
+  if (mode === "hero") setBox(r.left, r.top, r.width, r.height);
+  else if (mode === "dock") { const d = dockSize(); setBox(innerWidth - d[0] - 14, innerHeight - d[1] - 10, d[0], d[1]); }
+  else setBox(free.x, free.y, free.w, free.h);
+}
+let cw = 0, ch = 0;
+function fit() {
+  const w = wrap.clientWidth, h = wrap.clientHeight;
+  if (w === cw && h === ch) return;
+  cw = w; ch = h;
+  const rw = Math.max(2, Math.round(w / PX)), rh = Math.max(2, Math.round(h / PX));
+  renderer.setSize(rw, rh, false); rt.setSize(rw, rh);
+  camera.aspect = w / Math.max(1, h); camera.updateProjectionMatrix();
+}
+
+/* ---------- sections, outfits and lines ---------- */
+const LINES = {
+  top: "Hi! I'm Revathy. Drag me, poke me, I don't mind.",
+  about: "That's the real me. Résumé button's right there.",
+  showcase: "These are the real ones. Live. Go on, click a tab.",
+  dossier: "Case file 026. I'm the suspect AND the detective.",
+  receipts: "Numbers! My favourite love language.",
+  machine: "Press the button. I built every pipe in there.",
+  cards: "Collect all eight. No duplicates. I dedupe.",
+  blueprint: "Six stages, one signal card, zero duct tape.",
+  quiz: "Five questions. Choose wisely. I'm one of them.",
+  cheap: "Shades on. Spend caps on.",
+  notes: "Patch notes, because my career has version numbers.",
+  quests: "Side quests: also known as my whole personality.",
+  contact: "Punch me to copy my email. Gently."
+};
+const SECTIONS = [["top", "none"], ["about", "none"], ["dossier", "detective"], ["receipts", "accountant"], ["showcase", "headset"], ["machine", "hardhat"], ["blueprint", "hardhat"], ["cards", "explorer"], ["quiz", "party"],
+  ["cheap", "shades"], ["notes", "beanie"], ["quests", "explorer"], ["contact", "gloves"]]
+  .map(function (s) { return [document.getElementById(s[0]), s[1], s[0]]; }).filter(function (s) { return s[0]; });
+let current = null, manualLock = false;
+function checkSection() {
+  const y = innerHeight * 0.45; let found = SECTIONS[0];
+  SECTIONS.forEach(function (s) { const r = s[0].getBoundingClientRect(); if (r.top <= y && r.bottom > y) found = s; });
+  if (found[2] === current) return;
+  const first = current === null;
+  current = found[2];
+  if (!manualLock) setOutfit(found[1]);
+  if (!first && !sleeping && !dragging) say(LINES[current]);
+}
+
+/* ---------- interaction ---------- */
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+function hit(e) {
+  const r = canvas.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  return ray.intersectObject(fig, true).length > 0;
+}
+const sqS = { x: 0, v: 0 }, tilt = { x: 0, v: 0, t: 0 }, kick = { x: 0, v: 0 };
+let hopY = 0, hopV = 0, waveT = 0, sleeping = false, lastActive = performance.now(), pokeI = 0, ptr = null;
+const look = { x: 0, y: 0 };
+const POKES = ["Hehe. That tickles.", "Boop received.", "Careful, I'm running 8 tools.", "Okay, okay, I'll automate that.",
+  "Is this a meeting invite?", "You're very persistent. Have you considered sales?"];
+
+function activity() { lastActive = performance.now(); if (sleeping) wake(); }
+function sleep() { sleeping = true; say("Zzz… dreaming of clean CRM data", 600000); }
+function wake() { sleeping = false; if (!reduce) hopV = 4; sqS.v += 4; say("I'm up! I was just… caching."); }
+function poke(e) {
+  if (sleeping) { activity(); return; }
+  activity();
+  if (outfit === "gloves") { punch(e); return; }
+  sqS.v += 7; if (!reduce) hopV = 3.2;
+  heart(e.clientX, e.clientY);
+  say(POKES[pokeI++ % POKES.length]);
+}
+function punch(e) {
+  kick.v -= 9; sqS.v += 5; heart(e.clientX, e.clientY, "💥");
+  const email = "revathyradhakrishnan2412@gmail.com";
+  const done = function () { say("Ow! Email copied. Worth it."); if (window.rrToast) window.rrToast("📋 Email copied: " + email); };
+  const fail = function () { say("Ow! It's " + email, 6000); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(email).then(done, fail); else fail();
+}
+
+canvas.addEventListener("pointerdown", function (e) {
+  if (!hit(e)) return;
+  e.preventDefault(); canvas.setPointerCapture(e.pointerId);
+  const r = wrap.getBoundingClientRect();
+  ptr = { sx: e.clientX, sy: e.clientY, ox: e.clientX - r.left, oy: e.clientY - r.top, moved: false, lx: e.clientX, lt: performance.now(), vx: 0 };
+  activity();
+});
+canvas.addEventListener("pointermove", function (e) {
+  if (!ptr) { canvas.style.cursor = hit(e) ? "grab" : "default"; return; }
+  if (!ptr.moved && Math.hypot(e.clientX - ptr.sx, e.clientY - ptr.sy) > 6) {
+    ptr.moved = true; dragging = true; mode = "free";
+    wrap.classList.remove("glide"); glideUntil = 0;
+    free.w = wrap.offsetWidth; free.h = wrap.offsetHeight;
+    canvas.style.cursor = "grabbing"; say("Whoa! Put me down!");
+  }
+  if (ptr.moved) {
+    const now = performance.now();
+    const vx = (e.clientX - ptr.lx) / Math.max(1, now - ptr.lt) * 1000;
+    ptr.vx = ptr.vx * 0.7 + vx * 0.3; ptr.lx = e.clientX; ptr.lt = now;
+    free.x = e.clientX - ptr.ox; free.y = e.clientY - ptr.oy;
+  }
+});
+function endPointer(e) {
+  if (!ptr) return;
+  const p = ptr; ptr = null; canvas.style.cursor = "grab";
+  if (!p.moved) { poke(e); return; }
+  dragging = false;
+  const d = dockSize(), cx = free.x + free.w / 2, cy = free.y + free.h / 2;
+  free.w = d[0]; free.h = d[1];
+  free.x = Math.max(4, Math.min(innerWidth - d[0] - 4, cx - d[0] / 2));
+  free.y = Math.max(64, Math.min(innerHeight - d[1] - 4, cy - d[1] / 2));
+  free.scrollAt = scrollY;
+  glide(); sqS.v += 6; say("…I meant gently.");
+}
+canvas.addEventListener("pointerup", endPointer);
+canvas.addEventListener("pointercancel", endPointer);
+
+addEventListener("pointermove", function (e) {
+  const r = wrap.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height * 0.3;
+  look.x = Math.max(-1, Math.min(1, (e.clientX - cx) / 450));
+  look.y = Math.max(-1, Math.min(1, (e.clientY - cy) / 450));
+  activity();
+}, { passive: true });
+["scroll", "keydown", "wheel", "touchstart"].forEach(function (ev) { addEventListener(ev, activity, { passive: true }); });
+addEventListener("scroll", checkSection, { passive: true });
+addEventListener("resize", checkSection);
+
+/* ---------- animation loop ---------- */
+const clock = new THREE.Clock();
+let t = 0, nextBlink = 2, blinkT = 0, zzzT = 0;
+const lerp = function (a, b, k) { return a + (b - a) * k; };
+function frame() {
+  const dt = Math.min(clock.getDelta(), 0.05); t += dt;
+  layout(); fit();
+  if (glideUntil && performance.now() > glideUntil) { wrap.classList.remove("glide"); glideUntil = 0; }
+  if (!sleeping && !dragging && performance.now() - lastActive > 20000) sleep();
+
+  // springs
+  sqS.v += (-sqS.x * 170 - sqS.v * 10) * dt; sqS.x += sqS.v * dt;
+  kick.v += (-kick.x * 120 - kick.v * 9) * dt; kick.x += kick.v * dt;
+  tilt.t = dragging && ptr ? Math.max(-0.8, Math.min(0.8, -ptr.vx * 0.0012)) : 0;
+  tilt.v += ((tilt.t - tilt.x) * 60 - tilt.v * 6) * dt; tilt.x += tilt.v * dt;
+  if (hopV !== 0 || hopY > 0) {
+    hopV -= 22 * dt; hopY += hopV * dt;
+    if (hopY <= 0) { hopY = 0; if (hopV < -1) sqS.v += -hopV * 1.2; hopV = 0; }
+  }
+  const breath = reduce ? 0 : Math.sin(t * (sleeping ? 1.2 : 2.2)) * 0.012;
+  const s = Math.max(-0.35, Math.min(0.35, sqS.x));
+  sq.scale.set(1 + s * 0.5, 1 - s + breath, 1 + s * 0.5);
+  body.position.y = hopY;
+  shadow.scale.setScalar(Math.max(0.4, 1 - hopY * 0.35));
+  hang.rotation.z = tilt.x;
+
+  // head
+  neck.rotation.y = lerp(neck.rotation.y, sleeping ? 0 : look.x * 0.55, Math.min(1, dt * 5));
+  neck.rotation.x = lerp(neck.rotation.x, sleeping ? 0.35 : look.y * 0.3, Math.min(1, dt * 5)) + kick.x * 0.05;
+  pony.rotation.z = (reduce ? 0 : Math.sin(t * 1.6) * 0.06) - tilt.x * 0.8;
+
+  // face
+  if (t > nextBlink) { blinkT = 0.12; nextBlink = t + 2.5 + Math.random() * 3; }
+  blinkT = Math.max(0, blinkT - dt);
+  eyes.scale.y = sleeping ? 0.12 : (blinkT > 0 ? 0.12 : 1);
+  const surprised = dragging || kick.x < -0.15;
+  smile.visible = !surprised; mouthO.visible = surprised;
+  if (sleeping && (zzzT -= dt) <= 0) { zzzT = 4; say("Zzz… dreaming of clean CRM data", 600000); }
+
+  // arms and legs
+  const P = POSE[outfit] || POSE.none;
+  let lx = P.L[0], lz = P.L[1], rx = P.R[0], rz = P.R[1];
+  if (waveT > 0) { waveT -= dt; rx = 0; rz = -2.5 + Math.sin(t * 12) * 0.35; }
+  if (dragging) { lx = rx = 0; lz = 2.6 + Math.sin(t * 18) * 0.25; rz = -2.6 - Math.sin(t * 18) * 0.25; }
+  if (!reduce && !dragging && !sleeping) { lz += Math.sin(t * 2.1) * 0.04; rz -= Math.sin(t * 2.1) * 0.04; }
+  const k = Math.min(1, dt * 9);
+  armL.rotation.x = lerp(armL.rotation.x, lx, k); armL.rotation.z = lerp(armL.rotation.z, lz, k);
+  armR.rotation.x = lerp(armR.rotation.x, rx, k); armR.rotation.z = lerp(armR.rotation.z, rz, k);
+  legs.forEach(function (g, i) { g.rotation.x = dragging ? Math.sin(t * 16 + i * Math.PI) * 0.5 : lerp(g.rotation.x, 0, k); });
+
+  // outfit spin
+  if (spin > 0) {
+    spin += dt / 0.6; const p = Math.min(1, spin);
+    fig.rotation.y = (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2) * Math.PI * 2;
+    if (p >= 0.5 && pendingOutfit) { applyOutfit(pendingOutfit); pendingOutfit = null; }
+    if (p >= 1) { spin = 0; fig.rotation.y = 0; }
+  }
+
+  renderer.setRenderTarget(rt); renderer.clear(); renderer.render(scene, camera);
+  renderer.setRenderTarget(null); renderer.clear(); renderer.render(postScene, postCam);
+  placeBubble();
+  requestAnimationFrame(frame);
+}
+/* reactions from the page */
+document.addEventListener("rr-react", function (e) {
+  activity(); const d = (e && e.detail) || {};
+  if (d.text) say(d.text, d.ms || 4500);
+  if (!reduce) { hopV = 3.5; sqS.v += 5; }
+  if (d.wave) waveT = reduce ? 0 : 2.2;
+  if (d.outfit && OUT[d.outfit]) {
+    const prev = outfit; setOutfit(d.outfit);
+    if (d.revert !== false) setTimeout(function () { if (!manualLock && outfit === d.outfit) setOutfit(prev); }, d.revert || 7000);
+  }
+});
+
+/* hidden wardrobe (type "style") */
+const dpanel = document.createElement("div");
+dpanel.id = "dressup";
+dpanel.innerHTML = '<b>Wardrobe \ud83d\udc57</b><div class="dp-row"></div><button type="button" class="dp-auto">Follow the page</button><button type="button" class="dp-close" aria-label="Close">\u2715</button>';
+document.body.appendChild(dpanel);
+const LABELS = { none: "Everyday", detective: "Detective", accountant: "Accountant", hardhat: "Builder", headset: "Gamer", shades: "Cool", beanie: "Dev", explorer: "Explorer", gloves: "Boxer", party: "Party" };
+const dprow = dpanel.querySelector(".dp-row");
+Object.keys(LABELS).forEach(function (k) {
+  const b = document.createElement("button"); b.type = "button"; b.textContent = LABELS[k];
+  b.addEventListener("click", function () { manualLock = true; setOutfit(k); say("The " + LABELS[k].toLowerCase() + " look. Bold choice."); });
+  dprow.appendChild(b);
+});
+dpanel.querySelector(".dp-auto").addEventListener("click", function () { manualLock = false; current = null; checkSection(); say("Back to autopilot."); });
+dpanel.querySelector(".dp-close").addEventListener("click", function () { dpanel.classList.remove("open"); });
+document.addEventListener("rr-dressup", function () {
+  dpanel.classList.toggle("open");
+  if (dpanel.classList.contains("open")) say("You found my wardrobe! Pick a look.");
+});
+
+applyOutfit("none");
+checkSection();
+document.body.classList.add("has-mascot");
+frame(); // draw the first frame right away; later frames come from requestAnimationFrame
+setTimeout(function () { if (current === "top") { say(LINES.top); waveT = reduce ? 0 : 2.4; } }, 900);
+} catch (err) { giveUp(err); }
+})();
+</script>
+</body>
+</html>
