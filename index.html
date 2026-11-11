@@ -235,9 +235,22 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
     radial-gradient(circle at 20% 10%, rgba(255,255,255,.05), transparent 40%),
     repeating-linear-gradient(45deg, rgba(0,0,0,.05) 0 2px, transparent 2px 6px),
     #4A3527;
-  color: var(--paper-ink); padding: 88px 0 96px;
+  color: var(--paper-ink); padding: 64px 0 72px;
 }
-.dossier .head { color: #F4EAD5; margin-bottom: 36px; }
+.dossier .head { color: #F4EAD5; margin-bottom: 28px; }
+.folder { padding-top: 18px; }
+.ftabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; border-bottom: 2px solid var(--red); }
+.ftabs button { font: 14px "Special Elite", var(--mono); color: var(--paper-muted); background: var(--paper-2); border: 1px solid rgba(0,0,0,.12); border-bottom: 0; border-radius: 6px 6px 0 0; padding: 7px 12px 6px; cursor: pointer; margin-bottom: -2px; }
+.ftabs button[aria-selected="true"] { background: var(--paper); color: var(--red); border-color: var(--red); border-width: 2px 2px 0; }
+.ftabs button:hover { color: var(--paper-ink); }
+.fpanes { display: grid; }
+.fpane { grid-area: 1 / 1; visibility: hidden; }
+.fpane.on { visibility: visible; }
+.fpane h3.tw { margin-bottom: 10px; }
+.fpane ul { columns: 2; column-gap: 34px; }
+.fpane li { break-inside: avoid; }
+.fpane > p { margin-bottom: 6px; }
+.fhint { font: 13px var(--mono); color: var(--paper-muted); margin-top: 12px; }
 .dossier .head .kicker { color: var(--sticky); }
 .dossier .head .lede { color: #D9C9AE; }
 .board { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; align-items: start; }
@@ -280,10 +293,10 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
 .polaroid .cap { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font: 700 24px "Caveat", cursive; color: #333; }
 .identity li { list-style: none; margin-left: -18px; display: flex; gap: 10px; }
 .identity li span:first-child { width: 22px; flex: none; text-align: center; }
-.strengths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 10px; text-align: center; }
-.strengths div { font-size: 14px; font-weight: 600; line-height: 1.25; }
-.strengths i { display: block; font-style: normal; font-size: 24px; margin-bottom: 4px; }
-.strengths small { display: block; font-weight: 400; font-size: 12px; color: var(--paper-muted); margin-top: 2px; }
+.strengths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
+.strengths div { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 8px; align-items: center; align-content: start; font-size: 14px; font-weight: 600; line-height: 1.25; min-width: 0; overflow-wrap: break-word; }
+.strengths i { font-style: normal; font-size: 18px; line-height: 1; text-align: center; }
+.strengths small { grid-column: 2; display: block; font-weight: 400; font-size: 12px; line-height: 1.3; color: var(--paper-muted); margin-top: 2px; }
 .demo-links { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
 .demo-links a { font: 13px var(--mono); color: var(--red); text-decoration: none; border-bottom: 1px dashed var(--red); align-self: flex-start; }
 .pipeline { font: 600 19px/1.3 "Caveat", cursive; margin-top: 12px; color: #3A2E1A; background: var(--sticky); padding: 10px 12px; transform: rotate(-1.5deg); }
@@ -377,15 +390,16 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
 }
 
 /* about */
-.about .grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; margin-top: 8px; }
+section.about { padding: 64px 0; }
+.about .grid { display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: start; margin-top: 8px; }
 .about .portrait { position: relative; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: linear-gradient(135deg, var(--tomato), var(--sun)); display: grid; place-items: center; box-shadow: 8px 8px 0 var(--ink); border: 2px solid var(--ink); }
 .about .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .about .portrait span { font: 800 72px var(--display); color: #fff; }
-.about .bio p { font-size: 18px; margin: 0 0 16px; max-width: 680px; }
-.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 26px 0 30px; max-width: 680px; }
-.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.about .bio p { font-size: 17px; margin: 0 0 12px; max-width: 780px; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 22px; max-width: 900px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; }
 .fact small { display: block; font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
-.fact b { display: block; font-weight: 600; margin-top: 4px; font-size: 15px; }
+.fact b { display: block; font-weight: 600; margin-top: 3px; font-size: 14px; line-height: 1.35; }
 .about .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn .sub-note { font: 500 12px var(--mono); opacity: .8; }
 
@@ -433,7 +447,8 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
 
 /* responsive */
 @media (max-width: 960px) {
-  .about .grid { grid-template-columns: 220px 1fr; gap: 32px; }
+  .about .grid { grid-template-columns: 180px 1fr; gap: 32px; }
+  .facts { grid-template-columns: repeat(2, 1fr); }
   .showcase .layout { grid-template-columns: 1fr; }
   .toollist { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 6px; }
   .toollist button { flex: none; }
@@ -456,13 +471,20 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
   .stats, .cards, .quests { grid-template-columns: 1fr; }
   .stages { grid-template-columns: repeat(2, 1fr); }
   .note { grid-template-columns: 1fr; gap: 8px; }
-  .about .grid { grid-template-columns: 1fr; }
-  .about .portrait { max-width: 240px; }
-  .facts { grid-template-columns: 1fr; }
-  .board { grid-template-columns: 1fr; gap: 26px; }
+  section.about { padding: 52px 0; }
+  .about .grid { grid-template-columns: 1fr; gap: 20px; }
+  .about .portrait { max-width: 120px; border-radius: 18px; box-shadow: 5px 5px 0 var(--ink); }
+  .about .portrait span { font-size: 40px; }
+  .about .bio p { font-size: 16px; }
+  .facts { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .fact { padding: 9px 11px; }
+  .dossier { padding: 52px 0 56px; }
+  .board { grid-template-columns: 1fr 1fr; gap: 22px 14px; }
   .board > * { grid-column: 1 / -1 !important; }
-  .strengths { grid-template-columns: repeat(2, 1fr); }
-  .polaroid { max-width: 280px; margin: 0 auto; }
+  .board > .sticky.span-2 { grid-column: span 1 !important; font-size: 19px; }
+  .polaroid { max-width: 190px; margin: 0 auto; padding-bottom: 38px; }
+  .fpane ul { columns: 1; }
+  .ftabs button { padding: 6px 9px 5px; font-size: 13px; }
   .machine { padding: 18px; box-shadow: 5px 5px 0 var(--ink); }
   .card { height: 340px; }
   .mstage { height: 380px; }
@@ -522,10 +544,9 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
         <span aria-hidden="true">RR</span>
       </div>
       <div class="bio">
-        <h2 id="about-title" style="margin-bottom: 22px;">Hi, I'm Revathy.</h2>
+        <h2 id="about-title" style="margin-bottom: 14px;">Hi, I'm Revathy.</h2>
         <p>I'm a GTM Operations Associate at AI Intime, part of the founding team and reporting directly to the founder, and a Sales and Marketing Associate at its parent company, Vegam Solutions, in Bengaluru. We sell manufacturing software and industrial AI to chemical, batch and discrete manufacturers, mostly in the US.</p>
-        <p>I started out building lead lists and running outbound campaigns by hand. Then I got curious about why so much of it was manual, and started building the tools that do it instead: buying-signal engines, account research, lead cleaning, CRM data operations and n8n automation. Today eight of those tools are live on our internal tools server, and you can see them below.</p>
-        <p>I like problems that sit between people, data and process, and I care about tools that are cheap to run, honest about what they know, and actually used by the sales team.</p>
+        <p>I started out building lead lists and running outbound by hand, got curious about why so much of it was manual, and started building the tools that do it instead: buying-signal engines, account research, lead cleaning, CRM data operations and n8n automation. Eight of them are live on our internal tools server today. I like problems between people, data and process, and tools that are cheap to run, honest about what they know, and actually used by the sales team.</p>
         <div class="facts">
           <div class="fact"><small>Based in</small><b>Bengaluru, India</b></div>
           <div class="fact"><small>Experience</small><b>2 years in GTM, plus a 3-year internship at Vegam</b></div>
@@ -596,7 +617,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           <div><i>🔍</i>Curiosity<small>asks better questions</small></div>
           <div><i>📄</i>Research<small>connects dots</small></div>
           <div><i>⚡</i>Execution<small>ideas into action</small></div>
-          <div><i>✏️</i>Communication<small>writes, presents, creates</small></div>
+          <div><i>✏️</i>Commu&shy;nication<small>writes, presents, creates</small></div>
           <div><i>⚙️</i>Systems thinking<small>builds workflows</small></div>
           <div><i>🔀</i>Cross-domain<small>marketing → tech → industry</small></div>
           <div><i>💡</i>Storytelling<small>makes complex simple</small></div>
@@ -604,8 +625,18 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
         </div>
       </div>
 
-      <!-- row 3: evidence -->
-      <div class="paper span-4" style="--tilt:-.8deg">
+      <!-- row 3: evidence folder (tabs) + final notes -->
+      <div class="paper folder span-8" style="--tilt:-.4deg">
+        <div class="ftabs" role="tablist" aria-label="Evidence" id="ftabs">
+          <button type="button" role="tab" aria-selected="true">Exhibit 1</button>
+          <button type="button" role="tab" aria-selected="false">Exhibit 2</button>
+          <button type="button" role="tab" aria-selected="false">Exhibit 3</button>
+          <button type="button" role="tab" aria-selected="false">Exhibit 4</button>
+          <button type="button" role="tab" aria-selected="false">Exhibit 5</button>
+          <button type="button" role="tab" aria-selected="false">Ongoing</button>
+        </div>
+        <div class="fpanes" id="fpanes">
+      <div class="fpane on" role="tabpanel">
         <h3 class="tw">EVIDENCE 1: GTM &amp; RESEARCH</h3>
         <ul>
           <li>Built GTM signal engines that combine events and signals from multiple platforms</li>
@@ -619,7 +650,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           <a href="https://gtm-data-flow.vercel.app" target="_blank" rel="noopener">gtm-data-flow.vercel.app ↗</a>
         </div>
       </div>
-      <div class="paper span-4" style="--tilt:.7deg">
+      <div class="fpane" role="tabpanel">
         <h3 class="tw">EVIDENCE 2: AUTOMATION &amp; TOOLS</h3>
         <ul>
           <li>Connected 20 CRM accounts using n8n</li>
@@ -630,7 +661,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
         </ul>
         <div class="pipeline">GPT → Apollo / LinkedIn → n8n → Clay → Instantly / Dripify = a scalable pipeline 🤖</div>
       </div>
-      <div class="paper span-4" style="--tilt:-.5deg">
+      <div class="fpane" role="tabpanel">
         <h3 class="tw">EVIDENCE 3: PRODUCT &amp; MARKETING</h3>
         <ul>
           <li>Positioning and go-to-market for industrial and enterprise AI products</li>
@@ -641,9 +672,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           <li>Marketing content: videos, posts, creatives</li>
         </ul>
       </div>
-
-      <!-- row 4 -->
-      <div class="paper span-4" style="--tilt:.9deg">
+      <div class="fpane" role="tabpanel">
         <h3 class="tw">EVIDENCE 4: OUTREACH &amp; PIPELINE</h3>
         <p>From research to real conversations.</p>
         <ul>
@@ -653,7 +682,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
         </ul>
         <p class="hand" style="font-size:21px; margin-top:12px;">Small conversations today, bigger opportunities tomorrow. ♡</p>
       </div>
-      <div class="paper span-4" style="--tilt:-.7deg">
+      <div class="fpane" role="tabpanel">
         <h3 class="tw">EVIDENCE 5: CONTENT &amp; STORY</h3>
         <ul>
           <li>Use-case explainer videos (BOM extraction, lab reports, instrument printouts)</li>
@@ -662,7 +691,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           <li>Experimented with creative formats to explain complex ideas</li>
         </ul>
       </div>
-      <div class="paper span-4" style="--tilt:.5deg">
+      <div class="fpane" role="tabpanel">
         <h3 class="tw">ONGOING INVESTIGATIONS (2026 →)</h3>
         <ul class="checklist">
           <li>Master pipeline automation and n8n</li>
@@ -675,17 +704,8 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           <li>New hobbies, travel, and a life I'm proud of ♡</li>
         </ul>
       </div>
-
-      <!-- row 5 -->
-      <div class="paper crime span-5" style="--tilt:-1deg">
-        <h3>THE BIGGEST CRIME AGAINST COMMON SENSE</h3>
-        <p class="hand">Asking for a master plan before finishing the last 12 side quests.</p>
-        <button class="stamp" type="button" id="guilty">GUILTY<small>(as charged)</small></button>
-      </div>
-      <div class="sticky verdict span-3" style="--tilt:2deg">
-        <div class="tw" style="font-size:20px; margin-bottom:6px;">VERDICT ⚖️</div>
-        High curiosity. Chronic overthinking. Too many ideas. But always learning, always building, and never giving up.
-        <div><button class="stamp" type="button" id="caseOpen">CASE STILL OPEN</button></div>
+        </div>
+        <p class="fhint">Flip through the exhibits ↑</p>
       </div>
       <div class="paper chalk nopin span-4" style="--tilt:.8deg">
         <h3 class="tw">FINAL NOTES</h3>
@@ -696,6 +716,18 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           <li>Turn ideas into measurable impact</li>
           <li>You're doing better than you think ♡</li>
         </ul>
+      </div>
+
+      <!-- row 4 -->
+      <div class="paper crime span-7" style="--tilt:-1deg">
+        <h3>THE BIGGEST CRIME AGAINST COMMON SENSE</h3>
+        <p class="hand">Asking for a master plan before finishing the last 12 side quests.</p>
+        <button class="stamp" type="button" id="guilty">GUILTY<small>(as charged)</small></button>
+      </div>
+      <div class="sticky verdict span-5" style="--tilt:2deg">
+        <div class="tw" style="font-size:20px; margin-bottom:6px;">VERDICT ⚖️</div>
+        High curiosity. Chronic overthinking. Too many ideas. But always learning, always building, and never giving up.
+        <div><button class="stamp" type="button" id="caseOpen">CASE STILL OPEN</button></div>
       </div>
     </div>
   </div>
@@ -750,7 +782,7 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
           </div>
           <div class="proof"><h4>Proof</h4><ul id="toolproof"></ul></div>
         </div>
-        <p class="redact-note">Screens captured from the live tools, using saved results only (no new paid searches). Most frames blur company and contact details. The Decision Engine walkthrough and the Account Pyramid's outreach steps are the exceptions, shown in full (with phone numbers removed): the facts in them come from public sources. The Data Cleaner steps use a dummy file.</p>
+        <p class="redact-note">Screens captured from the live tools, using saved results only (no new paid searches). Most frames blur company and contact details. The Decision Engine walkthrough and the Account Pyramid's outreach steps are the exceptions, shown in full (with phone numbers removed): the facts in them come from public sources. The Data Cleaner steps use a dummy file. The n8n canvases are rendered from my own workflow exports with credentials, sheet links and prompts removed.</p>
       </div>
     </div>
   </div>
@@ -1144,6 +1176,26 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
   });
   window.rrToast = toast; window.rrBurst = burst;
 
+  /* dossier evidence folder */
+  (function () {
+    var tabs = document.getElementById("ftabs"), panes = document.getElementById("fpanes");
+    if (!tabs || !panes) return;
+    var bs = [].slice.call(tabs.children), ps = [].slice.call(panes.children);
+    function pick(k, focus) {
+      bs.forEach(function (b, j) { b.setAttribute("aria-selected", j === k ? "true" : "false"); b.tabIndex = j === k ? 0 : -1; });
+      ps.forEach(function (p, j) { p.classList.toggle("on", j === k); p.setAttribute("aria-hidden", j === k ? "false" : "true"); });
+      if (focus) bs[k].focus();
+    }
+    bs.forEach(function (b, k) {
+      b.addEventListener("click", function () { pick(k); });
+      b.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") { e.preventDefault(); pick((k + 1) % bs.length, true); }
+        if (e.key === "ArrowLeft") { e.preventDefault(); pick((k - 1 + bs.length) % bs.length, true); }
+      });
+    });
+    pick(0);
+  })();
+
   /* live tools showcase */
   var TOOLS = [
     { id: "job-signals", n: "Job Signal Engine", live: true, addr: "tools · job-signals", role: "Built it end to end · live since 21 Sep 2026",
@@ -1218,6 +1270,18 @@ footer kbd { font: inherit; padding: 2px 6px; border: 1px solid var(--line); bor
         { img: "dc-1", t: "Nine steps, one screen", c: "Apollo import, Prospeo enrichment, analyse and split, email verification, upload verified, combine and clean, CRM mapping, final export, upload to CRM. Each step unlocks the next." },
         { img: "dc-2", t: "Drop an Apollo export", c: "Shown here with a 7-row dummy file. The pipeline keeps the 12 columns the CRM needs and drops the rest. The master data is never modified." },
         { img: "dc-3", t: "Column detection and preview", c: "12 columns kept, 7 removed, a preview of the master data and a confirmation. Next: enrich the contacts via Prospeo, or skip to a manual upload." }
+      ] },
+    { id: "n8n", n: "n8n workflows", live: true, addr: "n8n · workflows", role: "Built them · list research at scale",
+      d: "Before the standalone tools, account research ran as n8n workflows. Each one reads a company list from a Google Sheet, visits every website, has an AI model pull out only what the page actually says, and writes the answer back row by row. A list of thousands of companies researches itself on a schedule.",
+      p: ["Real canvases from my own workflow exports", "8 to 14 nodes per workflow", "Resumable: every finished row is marked, so a stopped run picks up where it left off", "AI reads the pages; plain code does the scoring"],
+      s: "n8n · Gemini · OpenAI · Apollo API · Google Sheets",
+      steps: [
+        { img: "n8n-1", t: "Enrich a company list", c: "On a schedule it reads the master list and skips rows already done. For each company it fetches the website, Gemini extracts the industries served, services and managed-services keywords (and answers 'NO MSP' instead of guessing), the company LinkedIn page is pulled in, a second model reads the HQ country, and the row lands in a USA or non-USA sheet. A short wait between rows keeps the APIs happy." },
+        { img: "n8n-2", t: "Facts only, no guessing", c: "Every website goes to Gemini with a strict prompt: return one JSON object with only facts present in the text, and leave a field empty when it isn't there. A code node parses the answer and appends it to the results sheet, then the loop moves on." },
+        { img: "n8n-3", t: "Cloud-partner filter on 9,000 companies", c: "Scans each site's partnership and certification sections for Microsoft, AWS and Google Cloud keywords, writes what it found for each cloud, and marks the row completed so a long run can resume." },
+        { img: "n8n-4", t: "What they write about", c: "Pulls the blog, article and news titles from each homepage while ignoring menus, tags, dates and 'read more' links. The titles feed content and outreach angles." },
+        { img: "n8n-5", t: "Score first, then let the AI explain", c: "A code node scores industry, size, problem keywords, technology and geography into a total and a grade. GPT-4o mini is told not to change any number, only to interpret it: ICP fit summary, value hypothesis, recommended action and an outbound angle." },
+        { img: "n8n-6", t: "From an email to a full contact", c: "Splits each email into a name and a company domain, enriches the company and matches the person through the Apollo API, writes the company and person (LinkedIn, title, country) to an output sheet, and marks the row done." }
       ] },
     { id: "event-radar", n: "Event Radar", live: true, addr: "tools · event-radar", role: "My first build · March 2026",
       d: "Finds upcoming in-person events by city or US time zone and checks each one against our ideal customer profile. It's where my tool-building started; the newer Event Explorer builds on the 260 events it found.",
